@@ -1,16 +1,15 @@
 language: dart
-
-os: linux
-
-dist: xenial
-
-flutter:
-  - dev
-  - 1.22.0
+sudo: required
 
 dart:
   - dev
-  - 2.10.0
+  - stable
+  - beta
 
-branches:
-  only: [master]
+before_script:
+  - git clone https://github.com/flutter/flutter.git --branch beta
+  - pushd flutter
+  - popd
+  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+  - flutter doctor
+script: ./tool/travis.sh
