@@ -2,22 +2,15 @@ language: dart
 
 dart:
   - dev
-  - 2.4.0
+  - 2.10.0-73.0
 
 dart_task:
-  - test: --platform vm,chrome
   - dartanalyzer: --fatal-infos --fatal-warnings .
 
 matrix:
   include:
-    # Only validate formatting using the dev release
     - dart: dev
       dart_task: dartfmt
 
-# Only building master means that we don't run two builds for each pull request.
 branches:
   only: [master]
-
-cache:
-  directories:
-    - $HOME/.pub-cache
