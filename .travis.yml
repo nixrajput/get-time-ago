@@ -1,8 +1,16 @@
 language: dart
 
+os: linux
+
+dist: xenial
+
+flutter:
+  - dev
+  - 1.22.0
+
 dart:
   - dev
-  - 2.10.0-73.0
+  - 2.10.0
 
 branches:
   only: [master]
