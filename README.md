@@ -1,7 +1,7 @@
 A new Flutter package for getting time formats in seconds, minutes, hours, days and date.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)](https://pub.dev/packages/get_time_ago)
-[![Build Status]](https://pub.dev/packages/get_time_ago)
+[![Build Status](https://api.travis-ci.org/nixrajput/get-time-ago.svg)](https://pub.dev/packages/get_time_ago)
 
 ## Usage
 
