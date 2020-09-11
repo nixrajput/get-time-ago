@@ -29,13 +29,13 @@ print(result);
 ## Output
 
 <p>
- <img width="400px" src="get_time_ago_1.jpg">
- <img width="400px" src="get_time_ago_2.jpg">
+ <img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_1.jpg">
+ <img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_2.jpg">
  </p>    
  
 <p>
- <img width="400px" src="get_time_ago_3.jpg">
- <img width="400px" src="get_time_ago_4.jpg">
+ <img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_3.jpg">
+ <img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_4.jpg">
  </p>  
 
 
