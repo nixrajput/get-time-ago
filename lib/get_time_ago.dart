@@ -12,16 +12,18 @@ class TimeAgo {
     final date = DateFormat.yMMMd().format(dateTime);
 
     String message;
-    if (seconds < 60) {
+    if (seconds < 59) {
       message = "${seconds.round()} sec ago";
     } else if (seconds < 90) {
       message = "${minutes.round()} min ago";
-    } else if (minutes < 60) {
+    } else if (minutes < 59) {
       message = "${minutes.round()} min ago";
     } else if (minutes < 90) {
       message = "${hours.round()} hour ago";
-    } else if (hours < 24) {
+    } else if (hours < 23) {
       message = "${hours.round()} hours ago";
+    } else if (hours < 47) {
+      message = "${days.round()} day ago";
     } else if (hours < 168) {
       message = "${days.round()} days ago";
     } else {

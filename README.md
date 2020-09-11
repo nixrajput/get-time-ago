@@ -7,9 +7,9 @@ A new Flutter package for getting time formats in seconds, minutes, hours, days 
 
 ```dart
 import 'package:get_time_ago/get_time_ago.dart';
-var dateTime = DateTime.now();
+var _dateTime = DateTime.now();
 
-var result = TimeAgo.getTimeAgo(dateTime);
+var result = TimeAgo.getTimeAgo(_dateTime);
 print(result);
 ```
 
@@ -17,12 +17,19 @@ If you have saved DateTime as string in database, then you can parse it as:
 
 ```dart
 import 'package:get_time_ago/get_time_ago.dart';
-var dateTime = timestamp; // String DateTime from backend.
+// You can save abd fetch string type datetime as given format from any backend databases and set it to a variable, then parse this timestamp as given below steps:
+var _timestamp = '2020-09-10 05:21:37.712498'; // String DateTime from backend.
 
-var result = TimeAgo.getTimeAgo(DateTime.parse(timestamp));
+var result = TimeAgo.getTimeAgo(DateTime.parse(_timestamp));
 print(result);
 ```
 
+## Output
+
+![.](get_time_ago_1.jpg)
+![.](get_time_ago_2.jpg)
+![.](get_time_ago_3.jpg)
+![.](get_time_ago_4.jpg)
 
 
 
