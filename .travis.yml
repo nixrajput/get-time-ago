@@ -8,10 +8,9 @@ dart_task:
   - dartfmt
   - dartanalyzer: --fatal-warnings --fatal-infos .
 
-matrix:
-  include:
-    - dart: dev
-      script: pub run build_runner test -- -p chrome
+
+script:
+  - flutter pub get
 
 # Only building master means that we don't run two builds for each pull request.
 branches:
