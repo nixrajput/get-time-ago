@@ -27,7 +27,8 @@ print(result);
 ## Output
 
 <p>
- ![.](get_time_ago_1.jpg) ![.](get_time_ago_2.jpg)
+ <img width="240px" src="get_time_ago_1.jpg">
+ <img width="240px" src="get_time_ago_2.jpg">
  </p>    
 
 ![.](get_time_ago_3.jpg)     ![.](get_time_ago_4.jpg)
