@@ -2,11 +2,21 @@ language: dart
 
 dart:
   - dev
-  - stable
-  - beta
 
 dart_task:
-  - test: --platform vm
-  - test: --platform chrome
+  - test
   - dartfmt
-  - dartanalyzer: --fatal-warnings lib
+  - dartanalyzer: --fatal-warnings --fatal-infos .
+
+matrix:
+  include:
+    - dart: dev
+      script: pub run build_runner test -- -p chrome
+
+# Only building master means that we don't run two builds for each pull request.
+branches:
+  only: [master]
+
+cache:
+  directories:
+    - $HOME/.pub-cache

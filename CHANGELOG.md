@@ -1,4 +1,8 @@
+## 0.0.3
+
+- Made Function `getTimeAgo()` static.
+
+
 ## 0.0.2
 
-- Initial release.
 - Use `TimeAgo.getTimeAgo` to format DateTime.

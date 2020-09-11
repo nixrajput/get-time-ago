@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 class TimeAgo {
-  String getTimeAgo(DateTime dateTime) {
+  static String getTimeAgo(DateTime dateTime) {
     var elapsed =
         DateTime.now().millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch;
 
