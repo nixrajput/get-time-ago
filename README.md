@@ -27,13 +27,13 @@ print(result);
 ## Output
 
 <p>
- <img src="get_time_ago_1.jpg">
- <img src="get_time_ago_2.jpg">
+ <img width="360px" src="get_time_ago_1.jpg">
+ <img width="360px" src="get_time_ago_2.jpg">
  </p>    
  
 <p>
- <img src="get_time_ago_3.jpg">
- <img src="get_time_ago_4.jpg">
+ <img width="360px" src="get_time_ago_3.jpg">
+ <img width="360px" src="get_time_ago_4.jpg">
  </p>  
 
 
