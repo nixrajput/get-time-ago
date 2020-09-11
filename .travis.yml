@@ -4,3 +4,9 @@ dart:
   - dev
   - stable
   - beta
+
+dart_task:
+  - test: --platform vm
+  - test: --platform chrome
+  - dartfmt
+  - dartanalyzer: --fatal-warnings lib
