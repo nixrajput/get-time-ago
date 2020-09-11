@@ -26,10 +26,10 @@ print(result);
 
 ## Output
 
-![.](get_time_ago_1.jpg)
-![.](get_time_ago_2.jpg)
-![.](get_time_ago_3.jpg)
-![.](get_time_ago_4.jpg)
+![.](get_time_ago_1.jpg)     ![.](get_time_ago_2.jpg)
+
+![.](get_time_ago_3.jpg)     ![.](get_time_ago_4.jpg)
+
 
 
 
