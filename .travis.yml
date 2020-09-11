@@ -1,5 +1,4 @@
 language: dart
-sudo: required
 
 dart:
   - dev
@@ -12,4 +11,5 @@ before_script:
   - popd
   - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
   - flutter doctor
+  - flutter pub get
 script: ./tool/travis.sh
