@@ -1,4 +1,4 @@
-A new Flutter package for getting time formats in seconds, minutes, hours, days and date.
+A new Flutter package to format DateTime in seconds ago, minutes ago, hours ago, days ago and date.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
 
