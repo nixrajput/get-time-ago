@@ -29,9 +29,6 @@ print(result);
 
  [<img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_1.jpg">][pub]
  [<img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_2.jpg">][pub]
- 
- [<img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_3.jpg">][pub]
- [<img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_4.jpg">][pub]
 
 
 [pub]: https://pub.dev/packages/get_time_ago
