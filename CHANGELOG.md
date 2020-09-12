@@ -1,3 +1,8 @@
+## 0.0.6
+
+- Fixed some bugs.
+- Updated example.
+
 ## 0.0.5
 
 - Updated screenshots.

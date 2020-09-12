@@ -14,17 +14,15 @@ class TimeAgo {
     String message;
     if (seconds < 59) {
       message = "${seconds.round()} sec ago";
-    } else if (seconds < 90) {
-      message = "${minutes.round()} min ago";
     } else if (minutes < 59) {
       message = "${minutes.round()} min ago";
-    } else if (minutes < 90) {
+    } else if (minutes < 119) {
       message = "${hours.round()} hour ago";
-    } else if (hours < 23) {
+    } else if (hours < 24) {
       message = "${hours.round()} hours ago";
-    } else if (hours < 47) {
-      message = "${days.round()} day ago";
-    } else if (hours < 168) {
+    } else if (hours < 48) {
+      message = "1 day ago";
+    } else if (days < 7) {
       message = "${days.round()} days ago";
     } else {
       message = "$date";
