@@ -1,3 +1,8 @@
+## 0.0.7
+
+- Minor bug fixes.
+
+
 ## 0.0.6
 
 - Fixed some bugs.

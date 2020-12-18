@@ -27,11 +27,5 @@ var result = TimeAgo.getTimeAgo(DateTime.parse(_timestamp));
 print(result);
 ```
 
-## Output
-
- [<img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_1.jpg">][pub]
- [<img width="400px" src="https://github.com/nixrajput/get-time-ago/blob/master/get_time_ago_2.jpg">][pub]
-
 
 [pub]: https://pub.dev/packages/get_time_ago
-
