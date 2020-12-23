@@ -1,21 +1,25 @@
-name: example
-version: 1.0.0
-homepage: https://github.com/nixrajput/get-time-ago
+name: get_time_ago_example
+description: Demonstrates how to use the get_time_ago plugin.
+
+publish_to: 'none'
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  get_time_ago: ^0.0.5
+  get_time_ago:
 
-  intl: ^0.16.1
+    path: ../
+
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
 
 flutter:

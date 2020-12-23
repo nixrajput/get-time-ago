@@ -13,19 +13,19 @@ class TimeAgo {
 
     String message;
     if (seconds < 59) {
-      message = "${seconds.round()} sec ago";
+      message = '${seconds.round()} sec ago';
     } else if (minutes < 59) {
-      message = "${minutes.round()} min ago";
+      message = '${minutes.round()} min ago';
     } else if (minutes < 119) {
-      message = "${hours.round()} hour ago";
+      message = '${hours.round()} hour ago';
     } else if (hours < 24) {
-      message = "${hours.round()} hours ago";
+      message = '${hours.round()} hours ago';
     } else if (hours < 48) {
-      message = "1 day ago";
+      message = '1 day ago';
     } else if (days < 7) {
-      message = "${days.round()} days ago";
+      message = '${days.round()} days ago';
     } else {
-      message = "$date";
+      message = date;
     }
 
     return message;

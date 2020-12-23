@@ -1,4 +1,4 @@
-# GetTimeAgo
+# get_time_ago
 
 A new Flutter package to format DateTime in seconds ago, minutes ago, hours ago, days ago and date.
 
@@ -18,8 +18,8 @@ If you have saved DateTime as string in database, then you can parse it as:
 
 ```dart
 import 'package:get_time_ago/get_time_ago.dart';
-// You can save and fetch string type datetime as given format 
-// from any backend databases and set it to a variable, 
+// You can save and fetch string type datetime as given format
+// from any backend databases and set it to a variable,
 // then parse this timestamp as given below steps:
 var _timestamp = '2020-09-10 05:21:37.712498'; // String DateTime from backend.
 
