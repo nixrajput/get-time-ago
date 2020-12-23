@@ -1,21 +1,43 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_time_ago/get_time_ago.dart';
 
+final now = DateTime.now();
+
 void main() {
-  const channel = MethodChannel('get_time_ago');
+  group('get_time_ago', () {
+    test('should format with locale', () async {
+      final dateTime = now.subtract(const Duration(minutes: 10));
 
-  TestWidgetsFlutterBinding.ensureInitialized();
+      var result = TimeAgo.getTimeAgo(dateTime, locale: 'pt');
+      expect(result, equals('Há 10 minutos'));
+    });
 
-  setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async => '42');
-  });
+    test('should format with default locale, if locale messages doesnt exist',
+        () async {
+      final dateTime = now.subtract(const Duration(seconds: 30));
 
-  tearDown(() {
-    channel.setMockMethodCallHandler(null);
-  });
+      var result = TimeAgo.getTimeAgo(dateTime, locale: 'ko');
+      expect(result, equals('30 seconds ago'));
+    });
 
-  test('getPlatformVersion', () async {
-    expect(TimeAgo.getTimeAgo(DateTime.now()), '');
+    test(
+        'should format with default locale, if a [DateTime] is formatted as '
+        'string will be given as input', () async {
+      final stringDateTime = now.subtract(const Duration(days: 2)).toString();
+
+      var result = TimeAgo.getTimeAgo(DateTime.parse(stringDateTime));
+      expect(result, equals('2 days ago'));
+    });
+
+    test('should allow to set a new default locale', () async {
+      final dateTime = now.subtract(const Duration(hours: 10));
+
+      // Add 'en_short' locale messages
+      TimeAgo.setDefaultLocale('fr');
+
+      // use 'en_short'
+      var result = TimeAgo.getTimeAgo(dateTime);
+      expect(result, equals('il y a 10 heures'));
+    });
   });
 }

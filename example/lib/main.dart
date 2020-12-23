@@ -22,7 +22,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _dateTime = DateTime.now();
+  var _dateTime = DateTime.now().subtract(const Duration(hours: 7));
   final _timestamp = '2020-09-10 05:21:37.712498';
 
   Future<void> _selectDate() async {

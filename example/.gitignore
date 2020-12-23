@@ -32,7 +32,6 @@
 /build/
 pubspec.lock
 .metadata
-/test/
 /integration_test/
 
 # Web related
