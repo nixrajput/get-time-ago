@@ -10,11 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  cupertino_icons: ^1.0.2
+
   get_time_ago:
 
     path: ../
-
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:

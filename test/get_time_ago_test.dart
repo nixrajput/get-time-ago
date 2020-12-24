@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:get_time_ago/get_time_ago.dart';
+import 'package:test/test.dart';
 
 final now = DateTime.now();
 
@@ -32,10 +32,9 @@ void main() {
     test('should allow to set a new default locale', () async {
       final dateTime = now.subtract(const Duration(hours: 10));
 
-      // Add 'en_short' locale messages
+      // Set default locale to 'fr'
       TimeAgo.setDefaultLocale('fr');
 
-      // use 'en_short'
       var result = TimeAgo.getTimeAgo(dateTime);
       expect(result, equals('il y a 10 heures'));
     });

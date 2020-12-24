@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(height: 10.0),
                       Text(_dateTime.toString()),
                       Text(
-                        TimeAgo.getTimeAgo(_sevenHoursAgo, locale: 'es'),
+                        TimeAgo.getTimeAgo(_sevenHoursAgo, locale: 'pt'),
                         style: TextStyle(
                             color: Theme.of(context).accentColor,
                             fontWeight: FontWeight.bold),
@@ -141,14 +141,12 @@ class CustomContainer extends StatelessWidget {
   const CustomContainer({Key key, this.child}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.15),
-          borderRadius: const BorderRadius.all(Radius.circular(16.0))),
-      child: child,
-    );
-  }
+  Widget build(BuildContext context) => Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.15),
+            borderRadius: const BorderRadius.all(Radius.circular(16.0))),
+        child: child,
+      );
 }
