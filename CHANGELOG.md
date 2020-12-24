@@ -3,7 +3,8 @@
 ## 0.1.3
 
 - Minor bug fixes.
-- Revamped documentation.
+- Source code optimised.
+- Revamped example for better illustration.
 
 ## 0.1.2
 
