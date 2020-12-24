@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- Minor bug fixes.
+- Revamped documentation.
+- Revamped example for better illustration.
+
 ## 0.1.0
 
 - Added English (en) locale support.
