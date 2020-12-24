@@ -29,8 +29,8 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-#      - name: Install Flutter SDK
-#        run: sudo snap install flutter --classic
+      - name: Install Flutter SDK
+        run: sudo snap install flutter --classic
 
       - name: Run Flutter doctor
         run: flutter doctor -v
