@@ -23,8 +23,8 @@ jobs:
       - name: Print Dart SDK version
         run: dart --version
 
-      - name: Install dependencies
-        run: flutter pub get
+      - name: Install Dependencies
+        run: flutter pub get packages
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # - name: Verify formatting
