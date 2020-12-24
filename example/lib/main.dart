@@ -9,9 +9,11 @@ class MyApp extends StatelessWidget {
         title: 'GetTimeAgo Example',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            brightness: Brightness.light),
+        darkTheme: ThemeData(
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            brightness: Brightness.dark),
         home: HomePage(),
       );
 }
@@ -22,7 +24,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _dateTime = DateTime.now().subtract(const Duration(hours: 7));
+  var _dateTime = DateTime.now().subtract(const Duration(minutes: 10));
+  final _sevenHoursAgo = DateTime.now().subtract(const Duration(hours: 7));
   final _timestamp = '2020-09-10 05:21:37.712498';
 
   Future<void> _selectDate() async {
@@ -39,53 +42,110 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           title: const Text('GetTimeAgo Example'),
         ),
         body: Container(
-          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+          padding: const EdgeInsets.all(10.0),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FlatButton.icon(
-                  onPressed: _selectDate,
-                  label: const Text('Select DateTime'),
-                  color: Theme.of(context).accentColor,
-                  textColor: Colors.white,
-                  icon: const Icon(Icons.calendar_today),
+                CustomContainer(
+                  child: Column(
+                    children: [
+                      const Text(
+                        'Converting DateTime into TimeAgo',
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 10.0),
+                      Text(_dateTime.toString()),
+                      Text(
+                        TimeAgo.getTimeAgo(_sevenHoursAgo, locale: 'es'),
+                        style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20.0),
-                const Text(
-                  'Converting DateTime to TimeAgo',
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10.0),
-                Text(_dateTime.toString()),
-                Text(
-                  TimeAgo.getTimeAgo(_dateTime),
-                  style: TextStyle(
-                      color: Theme.of(context).accentColor,
-                      fontWeight: FontWeight.bold),
+                CustomContainer(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text(
+                        'Converting String into TimeAgo',
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 10.0),
+                      Text(_timestamp),
+                      Text(
+                        TimeAgo.getTimeAgo(DateTime.parse(_timestamp)),
+                        style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20.0),
-                const Text(
-                  'Converting String to TimeAgo',
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10.0),
-                Text(_timestamp),
-                Text(
-                  TimeAgo.getTimeAgo(DateTime.parse(_timestamp)),
-                  style: TextStyle(
-                      color: Theme.of(context).accentColor,
-                      fontWeight: FontWeight.bold),
+                CustomContainer(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text(
+                        'Converting Input into TimeAgo',
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                      ),
+                      FlatButton.icon(
+                        onPressed: _selectDate,
+                        label: const Text('Select DateTime'),
+                        color: Theme.of(context).accentColor,
+                        textColor: Colors.white,
+                        icon: const Icon(Icons.calendar_today),
+                      ),
+                      const SizedBox(height: 10.0),
+                      Text(_dateTime.toString()),
+                      Text(
+                        TimeAgo.getTimeAgo(_dateTime),
+                        style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
           ),
         ),
       );
+}
+
+class CustomContainer extends StatelessWidget {
+  final Widget child;
+
+  const CustomContainer({Key key, this.child}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.15),
+          borderRadius: const BorderRadius.all(Radius.circular(16.0))),
+      child: child,
+    );
+  }
 }

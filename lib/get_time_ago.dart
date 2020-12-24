@@ -61,26 +61,47 @@ class TimeAgo {
     final num days = hours / 24;
 
     String msg;
+    String result;
     if (seconds < 59) {
       msg = _message.secsAgo(seconds.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
     } else if (seconds < 119) {
       msg = _message.minAgo(minutes.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
     } else if (minutes < 59) {
       msg = _message.minsAgo(minutes.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
     } else if (minutes < 119) {
       msg = _message.hourAgo(hours.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
     } else if (hours < 24) {
       msg = _message.hoursAgo(hours.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
     } else if (hours < 48) {
       msg = _message.dayAgo(hours.round());
-    } else if (days < 7) {
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
+    } else if (days < 8) {
       msg = _message.daysAgo(days.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res != null && res.isNotEmpty)
+          .join(_message.wordSeparator());
     } else {
       msg = date;
+      result = date;
     }
 
-    return [_prefix, msg, _suffix]
-        .where((result) => result != null && result.isNotEmpty)
-        .join(_message.wordSeparator());
+    return result;
   }
 }

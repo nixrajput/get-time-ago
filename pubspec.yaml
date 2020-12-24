@@ -1,7 +1,6 @@
 name: get_time_ago
 description: A new Flutter plugin to format DateTime in seconds ago, minutes ago, hours ago, days ago and date.
 version: 0.1.0
-author: NixLab Inc.
 homepage: https://github.com/nixrajput/get-time-ago
 
 environment:
