@@ -7,7 +7,6 @@ import './messages/languages/hi_msg.dart';
 import './messages/languages/pt_br_msg.dart';
 import './messages/messages.dart';
 
-// ignore: avoid_classes_with_only_static_members
 class TimeAgo {
   static String _default = 'en';
 

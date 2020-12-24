@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
 class CustomContainer extends StatelessWidget {
   final Widget child;
 
-  const CustomContainer({Key key, this.child}) : super(key: key);
+  const CustomContainer({@required this.child});
 
   @override
   Widget build(BuildContext context) => Container(
