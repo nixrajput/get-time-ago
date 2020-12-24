@@ -28,8 +28,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: Print Flutter SDK version
-        run: flutter --version
+
+      - name: Install Flutter SDK version
+        run: sudo snap install flutter --classic
+
+      - name: Check Flutter path
+        run: flutter sdk-path
+
+      - name: Run Flutter doctor
+        run: flutter doctor -v
 
       - name: Install dependencies
         run: flutter pub get
@@ -38,11 +45,11 @@ jobs:
       #   run: dart format --output=none --set-exit-if-changed .
 
       # Consider passing '--fatal-infos' for slightly stricter analysis.
-      - name: Analyze project source
-        run: dart analyze
+      #- name: Analyze project source
+      #  run: dart analyze
 
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed. Note that Flutter projects will
       # want to change this to 'flutter test'.
       - name: Run tests
-        run: dart test
+        run: flutter run test
