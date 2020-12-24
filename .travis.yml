@@ -9,6 +9,10 @@ jobs:
       name: "Analyze"
       os: linux
       script: dartanalyzer --enable-experiment=non-nullable --fatal-warnings --fatal-infos .
+    - stage: install dependencies
+      name: "Dependencies"
+      os: linux
+      script: flutter pub get
     - stage: analyze_and_format
       name: "Format"
       os: linux
