@@ -4,6 +4,7 @@ import '../messages.dart';
 class EspanaMessages implements Messages {
   @override
   String prefixAgo() => 'hace';
+
   @override
   String prefixFromNow() => 'dentro de';
 

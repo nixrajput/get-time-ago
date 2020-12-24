@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    TimeAgo.setDefaultLocale('hi');
   }
 
   @override
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 CustomContainer(
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
                         'Converting DateTime into TimeAgo',
@@ -137,6 +139,7 @@ class CustomContainer extends StatelessWidget {
   final Widget child;
 
   const CustomContainer({Key key, this.child}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -4,6 +4,7 @@ import '../messages.dart';
 class HindiMessages implements Messages {
   @override
   String prefixAgo() => '';
+
   @override
   String prefixFromNow() => 'अब से';
 
