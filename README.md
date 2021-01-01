@@ -56,3 +56,9 @@ import 'package:get_time_ago/get_time_ago.dart';
 [<img align="left" alt="nixrajput | Instagram" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/instagram-brands.svg" />][instagram]
 
 [pub]: https://pub.dev/packages/get_time_ago
+[github]: https://github.com/nixrajput
+[website]: https://github.com/nixrajput
+[facebook]: https://facebook.com/nixrajput07
+[twitter]: https://facebook.com/nixrajput07
+[instagram]: https://instagram.com/nixrajput
+[linkedin]: https://linkedin.com/in/nixrajput
