@@ -43,6 +43,13 @@ import 'package:get_time_ago/get_time_ago.dart';
   }
 ```
 
+## Screenshots
+
+<img align="left" alt="C++" width="240px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
+<img align="left" alt="C++" width="240px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
+<img align="left" alt="C++" width="240px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_3.jpg" />
+<img align="left" alt="C++" width="240px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_4.jpg" />
+
 ## Connect With Me
 
 [<img align="left" alt="nixrajput | GitHub" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/github-brands.svg" />][website]
