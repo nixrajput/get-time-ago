@@ -8,10 +8,10 @@ environment:
   flutter: ">=1.20.0"
 
 dependencies:
-  intl: ^0.16.1
+  intl:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.11
-  test: ^1.15.7
+  build_runner: ^1.11.1
+  test: ^1.16.0
