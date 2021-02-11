@@ -47,8 +47,6 @@ import 'package:get_time_ago/get_time_ago.dart';
 
 <img align="left" alt="Screenshot" width="360px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
 <img alt="Screenshot" width="360px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
-<img align="left" alt="Screenshot" width="360px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_3.jpg" />
-<img alt="Screenshot" width="360px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_4.jpg" />
 
 ## Connect With Me
 

@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Flutter SDK
-        run: sudo snap install flutter --beta
+        run: sudo snap install flutter --classic
 
       - name: Run Flutter doctor
         run: flutter doctor -v
