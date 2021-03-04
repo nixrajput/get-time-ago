@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0
+- Null Safety support.
+- Minor bug fixes.
+- Performance improvements.
+
 ## 0.1.7
 
 - Bug fixes.

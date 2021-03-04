@@ -8,8 +8,6 @@ import './messages/languages/pt_br_msg.dart';
 import './messages/messages.dart';
 
 class TimeAgo {
-  static String _default = 'en';
-
   static final Map<String, Messages> _messageMap = {
     'en': EnglishMessages(),
     'es': EspanaMessages(),
@@ -28,9 +26,7 @@ class TimeAgo {
   /// ```
   ///
   static void setDefaultLocale(String locale) {
-    assert(locale != null, '[locale] must not be null');
     assert(_messageMap.containsKey(locale), '[locale] must be a valid locale');
-    _default = locale;
   }
 
   ///
@@ -39,8 +35,8 @@ class TimeAgo {
   /// - If [locale] is passed will look for message for that locale.
   ///
 
-  static String getTimeAgo(DateTime dateTime, {String locale}) {
-    final _locale = locale ?? _default;
+  static String getTimeAgo(DateTime dateTime, {String? locale}) {
+    final _locale = locale;
     final _message = _messageMap[_locale] ?? EnglishMessages();
     final date = DateFormat.yMMMd().format(dateTime);
     var elapsed =
@@ -64,37 +60,37 @@ class TimeAgo {
     if (seconds < 59) {
       msg = _message.secsAgo(seconds.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if (seconds < 119) {
       msg = _message.minAgo(minutes.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if (minutes < 59) {
       msg = _message.minsAgo(minutes.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if (minutes < 119) {
       msg = _message.hourAgo(hours.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if (hours < 24) {
       msg = _message.hoursAgo(hours.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if (hours < 48) {
       msg = _message.dayAgo(hours.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if (days < 8) {
       msg = _message.daysAgo(days.round());
       result = [_prefix, msg, _suffix]
-          .where((res) => res != null && res.isNotEmpty)
+          .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else {
       msg = date;
