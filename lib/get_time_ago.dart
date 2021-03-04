@@ -8,6 +8,8 @@ import './messages/languages/pt_br_msg.dart';
 import './messages/messages.dart';
 
 class TimeAgo {
+  static String _default = 'en';
+
   static final Map<String, Messages> _messageMap = {
     'en': EnglishMessages(),
     'es': EspanaMessages(),
@@ -27,6 +29,7 @@ class TimeAgo {
   ///
   static void setDefaultLocale(String locale) {
     assert(_messageMap.containsKey(locale), '[locale] must be a valid locale');
+    _default = locale;
   }
 
   ///
@@ -36,7 +39,7 @@ class TimeAgo {
   ///
 
   static String getTimeAgo(DateTime dateTime, {String? locale}) {
-    final _locale = locale;
+    final _locale = locale ?? _default;
     final _message = _messageMap[_locale] ?? EnglishMessages();
     final date = DateFormat.yMMMd().format(dateTime);
     var elapsed =
