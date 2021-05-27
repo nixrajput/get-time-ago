@@ -42,7 +42,7 @@ void main() {
     test('should support a simplified chinese locale', () async {
       final dateTime = now.subtract(const Duration(hours: 10));
 
-      // Set default locale to 'fr'
+      // Set default locale to 'zh'
       TimeAgo.setDefaultLocale('zh');
 
       var result = TimeAgo.getTimeAgo(dateTime);
