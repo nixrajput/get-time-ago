@@ -5,6 +5,7 @@ import './messages/languages/es_msg.dart';
 import './messages/languages/fr_msg.dart';
 import './messages/languages/hi_msg.dart';
 import './messages/languages/pt_br_msg.dart';
+import './messages/languages/zh_cn_msg.dart';
 import './messages/messages.dart';
 
 class TimeAgo {
@@ -17,6 +18,7 @@ class TimeAgo {
     'hi': HindiMessages(),
     'pt': PortugueseBrazilMessages(),
     'br': PortugueseBrazilMessages(),
+    'zh': SimplifiedChineseMessages(),
   };
 
   ///
