@@ -29,6 +29,7 @@ class TimeAgo {
   /// setDefaultLocale('fr');
   /// ```
   ///
+
   static void setDefaultLocale(String locale) {
     assert(_messageMap.containsKey(locale), '[locale] must be a valid locale');
     _default = locale;

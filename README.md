@@ -62,7 +62,7 @@ import 'package:get_time_ago/get_time_ago.dart';
 
 [pub]: https://pub.dev/packages/get_time_ago
 [github]: https://github.com/nixrajput
-[website]: https://github.com/nixrajput
+[website]: https://nixlab.co.in
 [facebook]: https://facebook.com/nixrajput07
 [twitter]: https://facebook.com/nixrajput07
 [instagram]: https://instagram.com/nixrajput
