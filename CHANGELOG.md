@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+- Revamped documentation.
+- Source code optimised.
+
 ## 1.0.1
 - Minor bug fixes.
 - Added Simplified Chinese (zh) locale support.
