@@ -1,52 +1,84 @@
 # get_time_ago
 
-A Flutter plugin to format `DateTime` into `get_time_ago` to get `DateTime` like `10 seconds ago` `a minute ago` `7 hours ago`.
+A Flutter plugin to convert and format `DateTime` object into `get_time_ago` format to get 
+`DateTime` object like `10 seconds ago` `a minute ago` `7 hours ago` Strings.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
 [![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg)][pub]
 
+## Installation
+
+Add `get_time_ago` as a dependency in your pubspec.yaml file.
+```dart
+dependencies:
+  image_picker: ^0.8.2
+```
+
 ## Usage
 
-Format any `DateTime` into `get_time_ago` format by following steps:
+Format any `DateTime` object into `get_time_ago` format by following steps:
 
 ```dart
+// Import the plugin
 import 'package:get_time_ago/get_time_ago.dart';
 
-var _dateTime = DateTime.now().subtract(const Duration(minutes: 10));
-print(TimeAgo.getTimeAgo(_dateTime)); // 10 minutes ago
-print(TimeAgo.getTimeAgo(_dateTime, locale:'es')); // hace 10 minutos
+// Pass DateTime object as argument in the method
+var _dateTime = DateTime.now().subtract(const Duration(minutes: 10)); // [DateTime] object
+print(GetTimeAgo.parse(_dateTime)); // 10 minutes ago
+
+// Formatting with locale
+print(GetTimeAgo.parse(_dateTime, locale:'es')); // hace 10 minutos
 ```
 
 ### Formatting String as `get_time_ago`
 
-If you saved a `DateTime` as a formatted String to any variable, database or cloud, then you can parse this `DateTime` and format it into `get_time_ago` format by following steps:
+If you have saved a `DateTime` object as a String into a variable, database or cloud, then you have to
+first convert the String into `DateTime` object and then pass it as argument in `parse` method of
+`get_time_ago` plugin to format it into `get_time_ago` format by following steps:
 
 ```dart
+// Import the plugin
 import 'package:get_time_ago/get_time_ago.dart';
 
 var _timestamp = '2020-09-10 05:21:37.712498'; // [DateTime] formatted as String.
-var result = TimeAgo.getTimeAgo(DateTime.parse(_timestamp));
+var _convertedTimestamp = DateTime.parse(_timestamp); // Converting into [DateTime] object
+var result = GetTimeAgo.parse(_convertedTimestamp); 
 print(result);
 ```
 
 ### Setting default locale
 
-If you want to change default `locale`, then call `setDefaultLocale` method into a function.
+If you want to change your default `locale`, then call `setDefaultLocale` method and pass the 
+`locale` code as the argument.
 
 ```dart
+// Import the plugin
 import 'package:get_time_ago/get_time_ago.dart';
 
 @override
   void initState() {
     super.initState();
-    TimeAgo.setDefaultLocale('fr'); // Set default locale to French
+    GetTimeAgo.setDefaultLocale('fr'); // Sets the default locale to French
   }
 ```
 
+## Migrating to 1.03+
+
+Starting with version **1.0.3** of the `get_time_ago` plugin, the default classname has been changed from
+`TimeAgo` to `GetTimeAgo` and method name `getTimeAgo` has been changed to `parse` to make the method call
+easy and reduce the confusion around classname and method name. It is recommended to migrate from old
+version to new version for seamless and efficient performance.
+
+#### Changes regarding the mew method call
+
+| Old API | New API |
+|--------|---------|
+| `TimeAgo.getTimeAgo(...)` | `GetTimeAgo.parse(_dateTime)` |
+
 ## Screenshots
 
-<img align="left" alt="Screenshot" width="360px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
-<img alt="Screenshot" width="360px" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
+<img align="left" alt="Screenshot_1" width="50%" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
+<img width="50%" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
 
 ## Connect With Me
 

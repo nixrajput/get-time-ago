@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    TimeAgo.setDefaultLocale('hi');
+    GetTimeAgo.setDefaultLocale('hi');
   }
 
   @override
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(height: 10.0),
                       Text(_dateTime.toString()),
                       Text(
-                        TimeAgo.getTimeAgo(_sevenHoursAgo, locale: 'pt'),
+                        GetTimeAgo.parse(_sevenHoursAgo, locale: 'pt'),
                         style: TextStyle(
                             color: Theme.of(context).accentColor,
                             fontWeight: FontWeight.bold),
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(height: 10.0),
                       Text(_timestamp),
                       Text(
-                        TimeAgo.getTimeAgo(DateTime.parse(_timestamp)),
+                        GetTimeAgo.parse(DateTime.parse(_timestamp)),
                         style: TextStyle(
                             color: Theme.of(context).accentColor,
                             fontWeight: FontWeight.bold),
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(height: 10.0),
                       Text(_dateTime.toString()),
                       Text(
-                        TimeAgo.getTimeAgo(_dateTime),
+                        GetTimeAgo.parse(_dateTime),
                         style: TextStyle(
                             color: Theme.of(context).accentColor,
                             fontWeight: FontWeight.bold),

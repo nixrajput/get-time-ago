@@ -1,5 +1,5 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:get_time_ago/get_time_ago.dart';
-import 'package:test/test.dart';
 
 final now = DateTime.now();
 
@@ -8,7 +8,7 @@ void main() {
     test('should format with locale', () async {
       final dateTime = now.subtract(const Duration(minutes: 10));
 
-      var result = TimeAgo.getTimeAgo(dateTime, locale: 'pt');
+      var result = GetTimeAgo.parse(dateTime, locale: 'pt');
       expect(result, equals('Há 10 minutos'));
     });
 
@@ -16,7 +16,7 @@ void main() {
         () async {
       final dateTime = now.subtract(const Duration(seconds: 30));
 
-      var result = TimeAgo.getTimeAgo(dateTime, locale: 'ko');
+      var result = GetTimeAgo.parse(dateTime, locale: 'ko');
       expect(result, equals('30 seconds ago'));
     });
 
@@ -25,7 +25,7 @@ void main() {
         'string will be given as input', () async {
       final stringDateTime = now.subtract(const Duration(days: 2)).toString();
 
-      var result = TimeAgo.getTimeAgo(DateTime.parse(stringDateTime));
+      var result = GetTimeAgo.parse(DateTime.parse(stringDateTime));
       expect(result, equals('2 days ago'));
     });
 
@@ -33,9 +33,9 @@ void main() {
       final dateTime = now.subtract(const Duration(hours: 10));
 
       // Set default locale to 'fr'
-      TimeAgo.setDefaultLocale('fr');
+      GetTimeAgo.setDefaultLocale('fr');
 
-      var result = TimeAgo.getTimeAgo(dateTime);
+      var result = GetTimeAgo.parse(dateTime);
       expect(result, equals('il y a 10 heures'));
     });
 
@@ -43,9 +43,9 @@ void main() {
       final dateTime = now.subtract(const Duration(hours: 10));
 
       // Set default locale to 'zh'
-      TimeAgo.setDefaultLocale('zh');
+      GetTimeAgo.setDefaultLocale('zh');
 
-      var result = TimeAgo.getTimeAgo(dateTime);
+      var result = GetTimeAgo.parse(dateTime);
       expect(result, equals('10小时前'));
     });
   });

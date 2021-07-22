@@ -8,7 +8,7 @@ import './messages/languages/pt_br_msg.dart';
 import './messages/languages/zh_cn_msg.dart';
 import './messages/messages.dart';
 
-class TimeAgo {
+class GetTimeAgo {
   static String _default = 'en';
 
   static final Map<String, Messages> _messageMap = {
@@ -36,12 +36,12 @@ class TimeAgo {
   }
 
   ///
-  /// [getTimeAgo] formats provided [dateTime] to a formatted time
+  /// [parse] formats provided [dateTime] to a formatted time
   /// like 'a minute ago'.
   /// - If [locale] is passed will look for message for that locale.
   ///
 
-  static String getTimeAgo(DateTime dateTime, {String? locale}) {
+  static String parse(DateTime dateTime, {String? locale}) {
     final _locale = locale ?? _default;
     final _message = _messageMap[_locale] ?? EnglishMessages();
     final date = DateFormat.yMMMd().format(dateTime);

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+- Name of default class changed to `GetTimeAgo`.
+- Method `getTimeAgo` renamed to `parse`.
+- Documentation updated.
+
 ## 1.0.2
 - Revamped documentation.
 - Source code optimised.
