@@ -1,7 +1,7 @@
 # get_time_ago
 
 A Flutter plugin to convert and format `DateTime` object into `get_time_ago` format to get 
-`DateTime` object like `10 seconds ago` `a minute ago` `7 hours ago` Strings.
+String like `10 seconds ago` `a minute ago` `7 hours ago` Strings.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
 [![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg)][pub]
@@ -11,7 +11,7 @@ A Flutter plugin to convert and format `DateTime` object into `get_time_ago` for
 Add `get_time_ago` as a dependency in your pubspec.yaml file.
 ```dart
 dependencies:
-  image_picker: ^0.8.2
+  image_picker: ^1.0.3
 ```
 
 ## Usage
@@ -62,23 +62,25 @@ import 'package:get_time_ago/get_time_ago.dart';
   }
 ```
 
-## Migrating to 1.03+
+## Migrating to 1.0.3+
 
-Starting with version **1.0.3** of the `get_time_ago` plugin, the default classname has been changed from
-`TimeAgo` to `GetTimeAgo` and method name `getTimeAgo` has been changed to `parse` to make the method call
-easy and reduce the confusion around classname and method name. It is recommended to migrate from old
+Starting with version **1.0.3** of the `get_time_ago` plugin, the default class name has been changed from
+`TimeAgo` to `GetTimeAgo` and method `getTimeAgo` has been renamed to `parse` to make the method call
+easy and reduce the confusion around class name and method name. It is recommended to migrate from old
 version to new version for seamless and efficient performance.
 
 #### Changes regarding the mew method call
 
 | Old API | New API |
 |--------|---------|
-| `TimeAgo.getTimeAgo(...)` | `GetTimeAgo.parse(_dateTime)` |
+| `TimeAgo.getTimeAgo(...)` | `GetTimeAgo.parse(...)` |
 
 ## Screenshots
 
-<img align="left" alt="Screenshot_1" width="50%" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
-<img width="50%" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
+<div align="center">
+<img align="left" alt="Screenshot_1" width="45%" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
+<img width="45%" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
+</div>
 
 ## Connect With Me
 
