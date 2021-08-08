@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.5
+- Documentation updated.
+
 ## 1.0.4
 - Performance improvements.
 - Time will display with date.

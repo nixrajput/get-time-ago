@@ -11,7 +11,7 @@ String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 Add `get_time_ago` as a dependency in your pubspec.yaml file.
 ```dart
 dependencies:
-  image_picker: ^1.0.4
+  get_time_ago: ^1.0.4
 ```
 
 ## Usage
