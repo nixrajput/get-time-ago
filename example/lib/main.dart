@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _dateTime = DateTime.now().subtract(const Duration(minutes: 10));
   final _sevenHoursAgo = DateTime.now().subtract(const Duration(hours: 7));
-  final _timestamp = '2020-09-10 05:21:37.712498';
+  final _timestamp = '2020-09-10 22:21:37.712498';
 
   Future<void> _selectDate() async {
     var pickedDate = await showDatePicker(
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        'Converting DateTime into TimeAgo',
+                        'Converting DateTime into GetTimeAgo',
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.bold),
                       ),
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        'Converting String into TimeAgo',
+                        'Converting String into GetTimeAgo',
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.bold),
                       ),
@@ -106,16 +106,14 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        'Converting Input into TimeAgo',
+                        'Converting Input into GetTimeAgo',
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.bold),
                       ),
-                      FlatButton.icon(
+                      ElevatedButton.icon(
                         onPressed: _selectDate,
-                        label: const Text('Select DateTime'),
-                        color: Theme.of(context).accentColor,
-                        textColor: Colors.white,
                         icon: const Icon(Icons.calendar_today),
+                        label: const Text('Select DateTime'),
                       ),
                       const SizedBox(height: 10.0),
                       Text(_dateTime.toString()),

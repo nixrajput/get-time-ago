@@ -44,7 +44,7 @@ class GetTimeAgo {
   static String parse(DateTime dateTime, {String? locale}) {
     final _locale = locale ?? _default;
     final _message = _messageMap[_locale] ?? EnglishMessages();
-    final date = DateFormat.yMMMd().format(dateTime);
+    final date = DateFormat("dd MMM, yyyy hh:mm aa").format(dateTime);
     var elapsed =
         DateTime.now().millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch;
 

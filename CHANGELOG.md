@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4
+- Performance improvements.
+- Time will display with date.
+
 ## 1.0.3
 - Name of default class changed to `GetTimeAgo`.
 - Method `getTimeAgo` renamed to `parse`.
