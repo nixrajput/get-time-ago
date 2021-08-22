@@ -30,7 +30,7 @@ class FrenchMessages implements Messages {
   String hoursAgo(int hours) => '$hours heures';
 
   @override
-  String dayAgo(int hours) => 'une jour';
+  String dayAgo(int hours) => 'un jour';
 
   @override
   String daysAgo(int days) => '$days jours';
