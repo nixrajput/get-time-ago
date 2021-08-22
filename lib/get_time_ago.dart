@@ -41,12 +41,14 @@ class GetTimeAgo {
   /// [parse] formats provided [dateTime] to a formatted time
   /// like 'a minute ago'.
   /// - If [locale] is passed will look for message for that locale.
+  /// - If [pattern] is passed will be used as the DateFormat pattern.
   ///
 
-  static String parse(DateTime dateTime, {String? locale}) {
+  static String parse(DateTime dateTime, {String? locale, String? pattern}) {
     final _locale = locale ?? _default;
     final _message = _messageMap[_locale] ?? EnglishMessages();
-    final date = DateFormat("dd MMM, yyyy hh:mm aa").format(dateTime);
+    final _pattern = pattern ?? "dd MMM, yyyy hh:mm aa";
+    final date = DateFormat(_pattern).format(dateTime);
     var elapsed =
         DateTime.now().millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch;
 
