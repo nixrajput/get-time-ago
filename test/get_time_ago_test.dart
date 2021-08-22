@@ -12,6 +12,14 @@ void main() {
       expect(result, equals('Há 10 minutos'));
     });
 
+    test('should format with pattern', () async {
+      final dateTime =
+          DateTime.fromMillisecondsSinceEpoch(0).add(Duration(hours: 12));
+
+      var result = GetTimeAgo.parse(dateTime, pattern: 'yy/M/DD HH:mm');
+      expect(result, equals('70/1/01 21:00'));
+    });
+
     test('should format with default locale, if locale messages doesnt exist',
         () async {
       final dateTime = now.subtract(const Duration(seconds: 30));
