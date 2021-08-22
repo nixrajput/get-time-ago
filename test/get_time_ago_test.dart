@@ -56,5 +56,12 @@ void main() {
       var result = GetTimeAgo.parse(dateTime);
       expect(result, equals('10小时前'));
     });
+
+    test('should support a japanese locale', () async {
+      final dateTime = now.subtract(const Duration(minutes: 1));
+
+      var result = GetTimeAgo.parse(dateTime, locale: 'ja');
+      expect(result, equals('1分前'));
+    });
   });
 }
