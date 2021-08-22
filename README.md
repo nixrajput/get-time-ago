@@ -79,8 +79,8 @@ version to new version for seamless and efficient performance.
 ## Screenshots
 
 <div align="center">
-<img align="left" alt="Screenshot_1" width="45%" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.jpg" />
-<img width="45%" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.jpg" />
+<img align="left" alt="Screenshot_1" width="45%" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.png" />
+<img width="45%" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.png" />
 </div>
 
 ## Connect With Me
