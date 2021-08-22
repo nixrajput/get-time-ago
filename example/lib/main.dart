@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _dateTime = DateTime.now().subtract(const Duration(minutes: 10));
   final _sevenHoursAgo = DateTime.now().subtract(const Duration(hours: 7));
-  final _timestamp = '2020-09-10 22:21:37.712498';
+  final _timestamp = '2021-05-10 22:21:37.712498';
 
   Future<void> _selectDate() async {
     var pickedDate = await showDatePicker(
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    GetTimeAgo.setDefaultLocale('hi');
+    //GetTimeAgo.setDefaultLocale('hi');
   }
 
   @override
@@ -64,12 +64,16 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        'Converting DateTime into GetTimeAgo',
+                        'Converting DateTime into GetTimeAgo with Portuguese Locale',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 10.0),
-                      Text(_dateTime.toString()),
+                      Text("DateTime.now().subtract(const Duration(hours: 7))"),
+                      const SizedBox(height: 5.0),
                       Text(
                         GetTimeAgo.parse(_sevenHoursAgo, locale: 'pt'),
                         style: TextStyle(
@@ -85,14 +89,21 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Text(
-                        'Converting String into GetTimeAgo',
+                        'Converting String into GetTimeAgo with custom DateTime pattern',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 10.0),
                       Text(_timestamp),
+                      const SizedBox(height: 5.0),
                       Text(
-                        GetTimeAgo.parse(DateTime.parse(_timestamp)),
+                        GetTimeAgo.parse(
+                          DateTime.parse(_timestamp),
+                          pattern: "dd-MM-yyyy hh:mm aa",
+                        ),
                         style: TextStyle(
                             color: Theme.of(context).accentColor,
                             fontWeight: FontWeight.bold),
@@ -107,9 +118,11 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       const Text(
                         'Converting Input into GetTimeAgo',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.bold),
                       ),
+                      const SizedBox(height: 5.0),
                       ElevatedButton.icon(
                         onPressed: _selectDate,
                         icon: const Icon(Icons.calendar_today),
@@ -117,11 +130,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                       const SizedBox(height: 10.0),
                       Text(_dateTime.toString()),
+                      const SizedBox(height: 5.0),
                       Text(
                         GetTimeAgo.parse(_dateTime),
                         style: TextStyle(
-                            color: Theme.of(context).accentColor,
-                            fontWeight: FontWeight.bold),
+                          color: Theme.of(context).accentColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),

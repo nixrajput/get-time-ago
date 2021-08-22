@@ -5,6 +5,7 @@
 - Added Japanese (ja) locale support.
 - Added an argument that can change the DateFormat pattern.
 - Documentation updated.
+- Added updated screenshots from Android.
 - Minor bug fixes.
 - Performance improvements.
 
