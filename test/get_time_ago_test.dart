@@ -13,11 +13,11 @@ void main() {
     });
 
     test('should format with pattern', () async {
-      final dateTime =
-          DateTime.fromMillisecondsSinceEpoch(0).add(Duration(hours: 12));
+      final dateTime = "2021-02-11 11:45:37.712498";
 
-      var result = GetTimeAgo.parse(dateTime, pattern: 'yy/M/dd HH:mm');
-      expect(result, equals('70/1/01 21:00'));
+      var result =
+          GetTimeAgo.parse(DateTime.parse(dateTime), pattern: 'yy/M/dd HH:mm');
+      expect(result, equals('21/2/11 11:45'));
     });
 
     test('should format with default locale, if locale messages doesnt exist',

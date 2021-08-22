@@ -1,28 +1,42 @@
 # Changelog
 
+## 1.0.6
+
+- Added Japanese (ja) locale support.
+- Added an argument that can change the DateFormat pattern.
+- Documentation updated.
+- Minor bug fixes.
+- Performance improvements.
+
 ## 1.0.5
+
 - Documentation updated.
 
 ## 1.0.4
+
 - Performance improvements.
 - Time will display with date.
 
 ## 1.0.3
+
 - Name of default class changed to `GetTimeAgo`.
 - Method `getTimeAgo` renamed to `parse`.
 - Documentation updated.
 
 ## 1.0.2
+
 - Revamped documentation.
 - Source code optimised.
 
 ## 1.0.1
+
 - Minor bug fixes.
 - Added Simplified Chinese (zh) locale support.
 - Source code optimised.
 - Revamped documentation.
 
 ## 1.0.0
+
 - Null Safety support.
 - Minor bug fixes.
 - Performance improvements.

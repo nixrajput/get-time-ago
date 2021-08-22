@@ -1,6 +1,6 @@
 # get_time_ago
 
-A Flutter plugin to convert and format `DateTime` object into `get_time_ago` format to get 
+A Flutter plugin to convert and format `DateTime` object into `get_time_ago` format to get  
 String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
@@ -9,9 +9,10 @@ String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 ## Installation
 
 Add `get_time_ago` as a dependency in your pubspec.yaml file.
+
 ```dart
 dependencies:
-  get_time_ago: ^1.0.5
+  get_time_ago: ^1.0.6
 ```
 
 ## Usage
@@ -40,7 +41,7 @@ first convert the String into `DateTime` object and then pass it as argument in 
 // Import the plugin
 import 'package:get_time_ago/get_time_ago.dart';
 
-var _timestamp = '2020-09-10 05:21:37.712498'; // [DateTime] formatted as String.
+var _timestamp = '2021-05-10 05:21:37.712498'; // [DateTime] formatted as String.
 var _convertedTimestamp = DateTime.parse(_timestamp); // Converting into [DateTime] object
 var result = GetTimeAgo.parse(_convertedTimestamp); 
 print(result);
@@ -48,7 +49,7 @@ print(result);
 
 ### Setting default locale
 
-If you want to change your default `locale`, then call `setDefaultLocale` method and pass the 
+If you want to change your default `locale`, then call `setDefaultLocale` method and pass the
 `locale` code as the argument.
 
 ```dart
@@ -69,10 +70,10 @@ Starting with version **1.0.3** of the `get_time_ago` plugin, the default class 
 easy and reduce the confusion around class name and method name. It is recommended to migrate from old
 version to new version for seamless and efficient performance.
 
-#### Changes regarding the mew method call
+### Changes regarding the mew method call
 
-| Old API | New API |
-|--------|---------|
+| Old API                   | New API                 |
+| ------------------------- | ----------------------- |
 | `TimeAgo.getTimeAgo(...)` | `GetTimeAgo.parse(...)` |
 
 ## Screenshots
