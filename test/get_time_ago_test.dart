@@ -63,5 +63,13 @@ void main() {
       var result = GetTimeAgo.parse(dateTime, locale: 'ja');
       expect(result, equals('1分前'));
     });
+    test('should support an Occitan locale', () async {
+      final dateTime = now.subtract(const Duration(hours: 10));
+      // Set default locale to 'oc'
+      GetTimeAgo.setDefaultLocale('oc');
+
+      var result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('fa 10 oras'));
+    });    
   });
 }
