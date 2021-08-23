@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.7
+
+- Added Occitan (oc) locale support.
+- Minor correction in French locale.
+- Minor bug fixes.
+
 ## 1.0.6
 
 - Added Japanese (ja) locale support.
