@@ -1,7 +1,7 @@
 import '../messages.dart';
 
 /// Occitan messages
-class FrenchMessages implements Messages {
+class OccitanMessages implements Messages {
   @override
   String prefixAgo() => 'fa';
 
