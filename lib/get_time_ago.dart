@@ -4,14 +4,14 @@ import './messages/languages/en_msg.dart';
 import './messages/languages/es_msg.dart';
 import './messages/languages/fr_msg.dart';
 import './messages/languages/hi_msg.dart';
-import './messages/languages/pt_br_msg.dart';
-import './messages/languages/zh_cn_msg.dart';
 import './messages/languages/ja_msg.dart';
 import './messages/languages/oc_msg.dart';
+import './messages/languages/pt_br_msg.dart';
+import './messages/languages/zh_cn_msg.dart';
 import './messages/messages.dart';
 
 class GetTimeAgo {
-  static String _default = 'en';
+  static String _defaultLocale = 'en';
 
   static final Map<String, Messages> _messageMap = {
     'en': EnglishMessages(),
@@ -22,7 +22,7 @@ class GetTimeAgo {
     'br': PortugueseBrazilMessages(),
     'zh': SimplifiedChineseMessages(),
     'ja': JapaneseMessages(),
-    'oc': OccitanMessages(),    
+    'oc': OccitanMessages(),
   };
 
   ///
@@ -36,7 +36,7 @@ class GetTimeAgo {
 
   static void setDefaultLocale(String locale) {
     assert(_messageMap.containsKey(locale), '[locale] must be a valid locale');
-    _default = locale;
+    _defaultLocale = locale;
   }
 
   ///
@@ -47,7 +47,7 @@ class GetTimeAgo {
   ///
 
   static String parse(DateTime dateTime, {String? locale, String? pattern}) {
-    final _locale = locale ?? _default;
+    final _locale = locale ?? _defaultLocale;
     final _message = _messageMap[_locale] ?? EnglishMessages();
     final _pattern = pattern ?? "dd MMM, yyyy hh:mm aa";
     final date = DateFormat(_pattern).format(dateTime);

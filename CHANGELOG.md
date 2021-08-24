@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.7+1
+
+- Minor bug fixes.
+- Performance improvements.
+
 ## 1.0.7
 
 - Added Occitan (oc) locale support.
