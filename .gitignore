@@ -5,7 +5,6 @@
 .packages
 .pub/
 pubspec.lock
-.metadata
 
 build/
 

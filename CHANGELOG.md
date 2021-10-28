@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.8
+- Bug fixes.
+- Performance improvements.
+- Source code optimization.
+
 ## 1.0.7+1
 
 - Minor bug fixes.

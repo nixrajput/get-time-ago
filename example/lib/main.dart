@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         GetTimeAgo.parse(_sevenHoursAgo, locale: 'pt'),
                         style: TextStyle(
-                            color: Theme.of(context).accentColor,
+                            color: Theme.of(context).colorScheme.secondary,
                             fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                           pattern: "dd-MM-yyyy hh:mm aa",
                         ),
                         style: TextStyle(
-                            color: Theme.of(context).accentColor,
+                            color: Theme.of(context).colorScheme.secondary,
                             fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         GetTimeAgo.parse(_dateTime),
                         style: TextStyle(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).colorScheme.secondary,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
