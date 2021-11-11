@@ -8,6 +8,7 @@ import './messages/languages/ja_msg.dart';
 import './messages/languages/oc_msg.dart';
 import './messages/languages/pt_br_msg.dart';
 import './messages/languages/zh_cn_msg.dart';
+import './messages/languages/ko_msg.dart';
 import './messages/messages.dart';
 
 class GetTimeAgo {
