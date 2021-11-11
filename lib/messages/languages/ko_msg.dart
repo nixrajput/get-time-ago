@@ -9,7 +9,7 @@ class KoreanMessages implements Messages {
   String prefixFromNow() => '';
 
   @override
-  String suffixAgo() => '초';
+  String suffixAgo() => '전';
 
   @override
   String suffixFromNow() => '방금';
