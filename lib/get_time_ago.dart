@@ -23,6 +23,7 @@ class GetTimeAgo {
     'zh': SimplifiedChineseMessages(),
     'ja': JapaneseMessages(),
     'oc': OccitanMessages(),
+    'ko': KoreanMessages(),
   };
 
   ///
