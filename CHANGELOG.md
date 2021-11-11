@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.9
+- Added Korean (ko) locale support.
+- Bug fixes.
+
 ## 1.0.8
 - Bug fixes.
 - Performance improvements.

@@ -72,5 +72,6 @@ void main() {
       var result = GetTimeAgo.parse(dateTime);
       expect(result, equals('fa 10 oras'));
     });
+
   });
 }

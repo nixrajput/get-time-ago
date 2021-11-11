@@ -1,6 +1,6 @@
 # get_time_ago
 
-A Flutter plugin to convert and format `DateTime` object into `get_time_ago` format to get  
+A Flutter package to convert and format `DateTime` object into `get_time_ago` format to get  
 String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
@@ -12,7 +12,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: ^1.0.7+1
+  get_time_ago: ^1.0.9
 ```
 
 ## Usage
