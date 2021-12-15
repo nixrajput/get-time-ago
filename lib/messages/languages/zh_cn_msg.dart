@@ -1,6 +1,6 @@
 import '../messages.dart';
 
-/// English Messages
+/// Simplified Chinese Messages
 class SimplifiedChineseMessages implements Messages {
   @override
   String prefixAgo() => '';
