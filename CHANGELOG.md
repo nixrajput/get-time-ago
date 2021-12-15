@@ -1,5 +1,10 @@
 # Changelog
 
+# 1.1.0
+- Added German (de) locale support.
+- Bug fixes.
+- Documentation updated.
+
 ## 1.0.9
 - Added Korean (ko) locale support.
 - Bug fixes.
