@@ -1,6 +1,6 @@
 import '../messages.dart';
 
-/// English Messages
+/// German Messages
 class GermanMessages implements Messages {
   @override
   String prefixAgo() => 'vor';
