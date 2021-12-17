@@ -1,6 +1,12 @@
 # Changelog
 
-# 1.1.0
+
+## 1.1.1
+- Added Traditional Chinese (de) locale support.
+- Bug fixes.
+- Documentation updated.
+
+## 1.1.0
 - Added German (de) locale support.
 - Bug fixes.
 - Documentation updated.
