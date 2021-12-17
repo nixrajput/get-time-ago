@@ -56,15 +56,15 @@ void main() {
       var result = GetTimeAgo.parse(dateTime);
       expect(result, equals('10小时前'));
     });
-    
-    test('should support a traditional chinese locale', () async {
-      final dateTime = now.subtract(const Duration(hours: 10));
 
-      // Set default locale to 'zh_Hant'
-      GetTimeAgo.setDefaultLocale('zh_Hant');
+    test('should support a traditional chinese locale', () async {
+      final dateTime = now.subtract(const Duration(hours: 20));
+
+      // Set default locale to 'zh_tr'
+      GetTimeAgo.setDefaultLocale('zh_tr');
 
       var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('10小時前'));
+      expect(result, equals('20小時前'));
     });
 
     test('should support a japanese locale', () async {

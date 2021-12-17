@@ -2,7 +2,7 @@
 
 
 ## 1.1.1
-- Added Traditional Chinese (de) locale support.
+- Added Traditional Chinese (zh_tr) locale support.
 - Bug fixes.
 - Documentation updated.
 

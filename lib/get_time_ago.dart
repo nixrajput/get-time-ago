@@ -1,6 +1,6 @@
-import 'package:get_time_ago/messages/languages/de_msg.dart';
 import 'package:intl/intl.dart';
 
+import './messages/languages/de_msg.dart';
 import './messages/languages/en_msg.dart';
 import './messages/languages/es_msg.dart';
 import './messages/languages/fr_msg.dart';
@@ -24,8 +24,7 @@ class GetTimeAgo {
     'pt': PortugueseBrazilMessages(),
     'br': PortugueseBrazilMessages(),
     'zh': SimplifiedChineseMessages(),
-    'zh_Hans': SimplifiedChineseMessages(),
-    'zh_Hant': TraditionalChineseMessages(),
+    'zh_tr': TraditionalChineseMessages(),
     'ja': JapaneseMessages(),
     'oc': OccitanMessages(),
     'ko': KoreanMessages(),
