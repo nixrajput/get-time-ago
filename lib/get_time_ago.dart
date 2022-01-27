@@ -5,13 +5,13 @@ import './messages/languages/en_msg.dart';
 import './messages/languages/es_msg.dart';
 import './messages/languages/fr_msg.dart';
 import './messages/languages/hi_msg.dart';
+import './messages/languages/id_msg.dart';
 import './messages/languages/ja_msg.dart';
 import './messages/languages/ko_msg.dart';
 import './messages/languages/oc_msg.dart';
 import './messages/languages/pt_br_msg.dart';
 import './messages/languages/zh_cn_msg.dart';
 import './messages/languages/zh_tw_msg.dart';
-import './messages/languages/id_msg.dart';
 import './messages/messages.dart';
 
 class GetTimeAgo {
@@ -30,7 +30,7 @@ class GetTimeAgo {
     'oc': OccitanMessages(),
     'ko': KoreanMessages(),
     'de': GermanMessages(),
-    'id' : IndonesianMessages(),
+    'id': IndonesianMessages(),
   };
 
   ///

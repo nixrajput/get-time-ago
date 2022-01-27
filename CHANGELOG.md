@@ -1,6 +1,15 @@
 # Changelog
 
 
+## 1.1.3
+- Added Indonesian (id) locale support.
+- Bug fixes.
+- Documentation updated.
+
+## 1.1.2
+- Bug fixes.
+- Documentation updated.
+
 ## 1.1.1
 - Added Traditional Chinese (zh_tr) locale support.
 - Bug fixes.
