@@ -72,7 +72,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       const SizedBox(height: 10.0),
-                      Text("DateTime.now().subtract(const Duration(hours: 7))"),
+                      const Text(
+                          "DateTime.now().subtract(const Duration(hours: 7))"),
                       const SizedBox(height: 5.0),
                       Text(
                         GetTimeAgo.parse(_sevenHoursAgo, locale: 'pt'),

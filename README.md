@@ -15,7 +15,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: ^1.1.2
+  get_time_ago: ^1.1.4
 ```
 
 ## Usage
@@ -81,10 +81,9 @@ version to new version for seamless and efficient performance.
 
 ## Screenshots
 
-<div align="center">
-<img align="left" alt="Screenshot_1" width="45%" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.png" />
-<img width="45%" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.png" />
-</div>
+<img width="400" alt="Screenshot_1" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.png" />
+<img width="400" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.png" />
+
 
 ## Connect With Me
 

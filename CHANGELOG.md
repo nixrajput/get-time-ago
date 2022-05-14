@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.4
+- Minor bug fixes.
+- Performance improvements.
 
 ## 1.1.3
 - Added Indonesian (id) locale support.
