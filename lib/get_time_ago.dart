@@ -12,6 +12,7 @@ import './messages/languages/oc_msg.dart';
 import './messages/languages/pt_br_msg.dart';
 import './messages/languages/zh_cn_msg.dart';
 import './messages/languages/zh_tw_msg.dart';
+import './messages/languages/tr_msg.dart';
 import './messages/messages.dart';
 
 class GetTimeAgo {
@@ -31,6 +32,7 @@ class GetTimeAgo {
     'ko': KoreanMessages(),
     'de': GermanMessages(),
     'id': IndonesianMessages(),
+    'tr': TurkishMessages(),
   };
 
   ///
