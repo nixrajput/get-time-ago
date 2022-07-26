@@ -1,5 +1,4 @@
 /// [Messages] Template
-
 abstract class Messages {
   String prefixAgo();
 

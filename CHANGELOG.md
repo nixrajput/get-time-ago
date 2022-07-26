@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.5
+- Added Turkish (tr) locale support.
+- Minor bug fixes.
+
 ## 1.1.4
 - Minor bug fixes.
 - Performance improvements.
