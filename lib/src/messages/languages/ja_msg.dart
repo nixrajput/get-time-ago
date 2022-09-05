@@ -6,13 +6,7 @@ class JapaneseMessages implements Messages {
   String prefixAgo() => '';
 
   @override
-  String prefixFromNow() => '';
-
-  @override
   String suffixAgo() => '前';
-
-  @override
-  String suffixFromNow() => '今から';
 
   @override
   String secsAgo(int seconds) => '$seconds秒';

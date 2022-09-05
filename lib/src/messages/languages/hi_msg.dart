@@ -6,13 +6,7 @@ class HindiMessages implements Messages {
   String prefixAgo() => '';
 
   @override
-  String prefixFromNow() => 'अब से';
-
-  @override
   String suffixAgo() => 'पहले';
-
-  @override
-  String suffixFromNow() => '';
 
   @override
   String secsAgo(int seconds) => '$seconds क्षण';

@@ -6,13 +6,7 @@ class IndonesianMessages implements Messages {
   String prefixAgo() => '';
 
   @override
-  String prefixFromNow() => '';
-
-  @override
   String suffixAgo() => 'lalu';
-
-  @override
-  String suffixFromNow() => 'sekarang';
 
   @override
   String secsAgo(int seconds) => '$seconds detik';

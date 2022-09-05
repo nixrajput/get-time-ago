@@ -6,13 +6,7 @@ class PortugueseBrazilMessages implements Messages {
   String prefixAgo() => 'Há';
 
   @override
-  String prefixFromNow() => 'em';
-
-  @override
   String suffixAgo() => '';
-
-  @override
-  String suffixFromNow() => '';
 
   @override
   String secsAgo(int seconds) => '$seconds segundos';

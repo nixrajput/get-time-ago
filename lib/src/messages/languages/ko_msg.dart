@@ -6,13 +6,7 @@ class KoreanMessages implements Messages {
   String prefixAgo() => '';
 
   @override
-  String prefixFromNow() => '';
-
-  @override
   String suffixAgo() => '전';
-
-  @override
-  String suffixFromNow() => '방금';
 
   @override
   String secsAgo(int seconds) => '$seconds초';

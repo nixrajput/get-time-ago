@@ -1,18 +1,12 @@
 import '../messages.dart';
 
-/// French messages
+/// French src.messages
 class FrenchMessages implements Messages {
   @override
   String prefixAgo() => 'il y a';
 
   @override
-  String prefixFromNow() => "d'ici";
-
-  @override
   String suffixAgo() => '';
-
-  @override
-  String suffixFromNow() => '';
 
   @override
   String secsAgo(int seconds) => '$seconds secondes';

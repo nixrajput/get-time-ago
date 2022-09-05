@@ -6,13 +6,7 @@ class EnglishMessages implements Messages {
   String prefixAgo() => '';
 
   @override
-  String prefixFromNow() => '';
-
-  @override
   String suffixAgo() => 'ago';
-
-  @override
-  String suffixFromNow() => 'from now';
 
   @override
   String secsAgo(int seconds) => '$seconds seconds';

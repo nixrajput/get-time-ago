@@ -1,12 +1,11 @@
 /// [Messages] Template
+
 abstract class Messages {
+  /// Example: `prefixAgo()` 1 min `suffixAgo()`
   String prefixAgo();
 
-  String prefixFromNow();
-
+  /// Example: `prefixAgo()` 1 min `suffixAgo()`
   String suffixAgo();
-
-  String suffixFromNow();
 
   /// When time is less than a minute
   String secsAgo(int seconds);
@@ -29,5 +28,6 @@ abstract class Messages {
   /// When time is in days
   String daysAgo(int days);
 
+  /// Word separator when words are concatenated
   String wordSeparator() => ' ';
 }

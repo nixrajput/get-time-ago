@@ -6,13 +6,7 @@ class EspanaMessages implements Messages {
   String prefixAgo() => 'hace';
 
   @override
-  String prefixFromNow() => 'dentro de';
-
-  @override
   String suffixAgo() => '';
-
-  @override
-  String suffixFromNow() => '';
 
   @override
   String secsAgo(int seconds) => '$seconds segundos';

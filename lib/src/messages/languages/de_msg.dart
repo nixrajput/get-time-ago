@@ -6,13 +6,7 @@ class GermanMessages implements Messages {
   String prefixAgo() => 'vor';
 
   @override
-  String prefixFromNow() => 'in';
-
-  @override
   String suffixAgo() => '';
-
-  @override
-  String suffixFromNow() => '';
 
   @override
   String secsAgo(int seconds) => '$seconds Sekunden';

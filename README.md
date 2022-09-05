@@ -4,9 +4,6 @@ A Flutter package to convert and format `DateTime` object into `get_time_ago` fo
 String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
-[![popularity](https://badges.bar/get_time_ago/popularity)](https://pub.dev/packages/get_time_ago/score)
-[![likes](https://badges.bar/get_time_ago/likes)](https://pub.dev/packages/get_time_ago/score)
-[![pub points](https://badges.bar/get_time_ago/pub%20points)](https://pub.dev/packages/get_time_ago/score)
 [![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg)][pub]
 
 ## Installation
@@ -15,7 +12,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: ^1.1.5
+  get_time_ago: ^1.1.6
 ```
 
 ## Usage
@@ -66,18 +63,49 @@ import 'package:get_time_ago/get_time_ago.dart';
   }
 ```
 
-## Migrating to 1.0.3+
+## Setting Custom Locale & Messages
 
-Starting with version **1.0.3** of the `get_time_ago` plugin, the default class name has been changed from
-`TimeAgo` to `GetTimeAgo` and method `getTimeAgo` has been renamed to `parse` to make the method call
-easy and reduce the confusion around class name and method name. It is recommended to migrate from old
-version to new version for seamless and efficient performance.
+**Implementing and Adding Custom Messages**
 
-### Changes regarding the mew method call
+```dart
+class CustomMessages implements Messages {
+  @override
+  String prefixAgo() => '';
 
-| Old API                   | New API                 |
-| ------------------------- | ----------------------- |
-| `TimeAgo.getTimeAgo(...)` | `GetTimeAgo.parse(...)` |
+  @override
+  String suffixAgo() => 'ago';
+
+  @override
+  String secsAgo(int seconds) => '$seconds seconds';
+
+  @override
+  String minAgo(int minutes) => 'a minute';
+
+  @override
+  String minsAgo(int minutes) => '$minutes minutes';
+
+  @override
+  String hourAgo(int minutes) => 'an hour';
+
+  @override
+  String hoursAgo(int hours) => '$hours hours';
+
+  @override
+  String dayAgo(int hours) => 'a day';
+
+  @override
+  String daysAgo(int days) => '$days days';
+
+  @override
+  String wordSeparator() => ' ';
+}
+```
+
+**Overriding `en` Locale Messages with Custom Messages**
+
+```dart
+GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
+```
 
 ## Screenshots
 

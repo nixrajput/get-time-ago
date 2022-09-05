@@ -1,33 +1,27 @@
 import '../messages.dart';
 
-/// Traditional Chinese Messages
-class TraditionalChineseMessages implements Messages {
+/// Simplified Chinese Messages
+class SimplifiedChineseMessages implements Messages {
   @override
   String prefixAgo() => '';
-
-  @override
-  String prefixFromNow() => '';
 
   @override
   String suffixAgo() => '前';
 
   @override
-  String suffixFromNow() => '現在起';
-
-  @override
   String secsAgo(int seconds) => '$seconds秒';
 
   @override
-  String minAgo(int minutes) => '1分鐘';
+  String minAgo(int minutes) => '1分钟';
 
   @override
-  String minsAgo(int minutes) => '$minutes分鐘';
+  String minsAgo(int minutes) => '$minutes分钟';
 
   @override
-  String hourAgo(int minutes) => '1小時';
+  String hourAgo(int minutes) => '1小时';
 
   @override
-  String hoursAgo(int hours) => '$hours小時';
+  String hoursAgo(int hours) => '$hours小时';
 
   @override
   String dayAgo(int hours) => '1天';

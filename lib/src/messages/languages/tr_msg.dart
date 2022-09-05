@@ -6,13 +6,7 @@ class TurkishMessages implements Messages {
   String prefixAgo() => '';
 
   @override
-  String prefixFromNow() => '';
-
-  @override
   String suffixAgo() => 'önce';
-
-  @override
-  String suffixFromNow() => 'içinde';
 
   @override
   String secsAgo(int seconds) => '$seconds saniye';

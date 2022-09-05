@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.6
+- Project structure changed/updated.
+- Adding method to override DefaultMessages.
+- Adding method to add your own Locale and Messages.
+- Some unnecessary codes are removed.
+- Documentation updated.
+
 ## 1.1.5
 - Added Turkish (tr) locale support.
 - Minor bug fixes.

@@ -20,7 +20,8 @@ void main() {
       expect(result, equals('21/2/11 11:45'));
     });
 
-    test('should format with default locale, if locale messages doesnt exist',
+    test(
+        'should format with default locale, if locale src.messages doesnt exist',
         () async {
       final dateTime = now.subtract(const Duration(seconds: 30));
 

@@ -1,18 +1,12 @@
 import '../messages.dart';
 
-/// Occitan messages
+/// Occitan src.messages
 class OccitanMessages implements Messages {
   @override
   String prefixAgo() => 'fa';
 
   @override
-  String prefixFromNow() => "d’aquí";
-
-  @override
   String suffixAgo() => '';
-
-  @override
-  String suffixFromNow() => '';
 
   @override
   String secsAgo(int seconds) => '$seconds segondas';
