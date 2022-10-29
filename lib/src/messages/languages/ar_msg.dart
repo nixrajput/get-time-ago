@@ -1,3 +1,4 @@
+import '../../utils/utility.dart';
 import '../messages.dart';
 
 /// Arabic Messages
@@ -10,7 +11,7 @@ class ArabicMessages extends Messages {
 
   @override
   String secsAgo(int seconds) {
-    if(seconds==2){
+    if (seconds == 2) {
       return 'ثانيتين';
     }
     return '${convertToUrduNumbers(seconds)} ثوان';
@@ -21,7 +22,7 @@ class ArabicMessages extends Messages {
 
   @override
   String minsAgo(int minutes) {
-    if(minutes==2){
+    if (minutes == 2) {
       return 'دقيقتين';
     }
     return '${convertToUrduNumbers(minutes)} دقائق';
@@ -32,7 +33,7 @@ class ArabicMessages extends Messages {
 
   @override
   String hoursAgo(int hours) {
-    if(hours==2){
+    if (hours == 2) {
       return 'ساعتين';
     }
     return '${convertToUrduNumbers(hours)} ساعات';
@@ -43,7 +44,7 @@ class ArabicMessages extends Messages {
 
   @override
   String daysAgo(int days) {
-    if(days==2){
+    if (days == 2) {
       return 'يومين';
     }
     return '${convertToUrduNumbers(days)} أيام';

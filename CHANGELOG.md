@@ -1,6 +1,19 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+## 1.1.7
+
+- Added Urdu (ur) and Arabic (ar) locales support.
+- Added utility functions to convert English numbers to Urdu and Arabic numbers.
+- Added and updated tests.
+- Documentation improvements.
+- All known bugs fixed.
+
 ## 1.1.6
+
 - Project structure changed/updated.
 - Adding method to override DefaultMessages.
 - Adding method to add your own Locale and Messages.
@@ -8,37 +21,45 @@
 - Documentation updated.
 
 ## 1.1.5
+
 - Added Turkish (tr) locale support.
 - Minor bug fixes.
 
 ## 1.1.4
+
 - Minor bug fixes.
 - Performance improvements.
 
 ## 1.1.3
+
 - Added Indonesian (id) locale support.
 - Bug fixes.
 - Documentation updated.
 
 ## 1.1.2
+
 - Bug fixes.
 - Documentation updated.
 
 ## 1.1.1
+
 - Added Traditional Chinese (zh_tr) locale support.
 - Bug fixes.
 - Documentation updated.
 
 ## 1.1.0
+
 - Added German (de) locale support.
 - Bug fixes.
 - Documentation updated.
 
 ## 1.0.9
+
 - Added Korean (ko) locale support.
 - Bug fixes.
 
 ## 1.0.8
+
 - Bug fixes.
 - Performance improvements.
 - Source code optimization.

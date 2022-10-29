@@ -5,6 +5,9 @@ String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 
 [![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
 [![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg)][pub]
+[![Flutter](https://img.shields.io/badge/Flutter-3.3.0-blue.svg)](https://flutter.io/)
+[![Dart](https://img.shields.io/badge/Dart-2.18.0-blue.svg)](https://www.dartlang.org/)
+[![Code Climate](https://codeclimate.com/github/nixrajput/get-time-ago/badges/gpa.svg)](https://codeclimate.com/github/nixrajput/get-time-ago)
 
 ## Installation
 
@@ -12,7 +15,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: ^1.1.6
+  get_time_ago: ^1.1.7
 ```
 
 ## Usage
@@ -63,9 +66,9 @@ import 'package:get_time_ago/get_time_ago.dart';
   }
 ```
 
-## Setting Custom Locale & Messages
+### Setting Custom Locale & Messages
 
-**Implementing and Adding Custom Messages**
+Implementing and Adding Custom Messages
 
 ```dart
 class CustomMessages implements Messages {
@@ -101,7 +104,7 @@ class CustomMessages implements Messages {
 }
 ```
 
-**Overriding `en` Locale Messages with Custom Messages**
+Overriding `en` Locale Messages with Custom Messages
 
 ```dart
 GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
