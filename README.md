@@ -112,6 +112,9 @@ GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 <img width="400" alt="Screenshot_1" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.png" />
 <img width="400" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.png" />
 
+## Activities
+
+![Alt](https://repobeats.axiom.co/api/embed/cbde7baa03c95d2e3261af1fa679d94570341b08.svg "Repobeats analytics image")
 
 ## Connect With Me
 
