@@ -84,4 +84,65 @@ void main() {
       expect(result, equals('fa 10 oras'));
     });
   });
+  
+  test('should support Urdu locale with the difference in seconds', () async {
+    final dateTime = now.subtract(const Duration(seconds: 30));
+
+    var result = GetTimeAgo.parse(dateTime, locale: "ur");
+    expect(result, equals('\u202B ' + '۳۰ سیکنڈ پہلے'));
+  });
+
+  test('should support Urdu locale with the difference of 3 days', () async {
+    final stringDateTime = now.subtract(const Duration(days: 3)).toString();
+
+    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ur");
+    expect(result, equals('\u202B ' + '۳ دن پہلے'));
+  });
+
+  test('should support Urdu locale with the difference of 9 minutes', () async {
+    final stringDateTime = now.subtract(const Duration(minutes: 9)).toString();
+
+    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ur");
+    expect(result, equals('\u202B ' + '۹ منٹ پہلے'));
+    
+  test(
+      'should support Arabic locale with the difference in seconds',
+          () async {
+        final dateTime = now.subtract(const Duration(seconds: 30));
+
+        var result = GetTimeAgo.parse(dateTime, locale: "ar");
+        expect(result, equals('قبل ۳۰ ثوان'));
+      });
+
+  test(
+      'should support Arabic locale with the difference of 2 days', () async {
+    final stringDateTime = now.subtract(const Duration(days: 2)).toString();
+
+    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ar");
+    expect(result, equals('قبل يومين'));
+  });
+
+  test(
+      'should support Arabic locale with the difference of 3 days', () async {
+    final stringDateTime = now.subtract(const Duration(days: 3)).toString();
+
+    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ar");
+    expect(result, equals('قبل ۳ أيام'));
+  });
+
+  test(
+      'should support Arabic locale with the difference of 2 minutes', () async {
+    final stringDateTime = now.subtract(const Duration(minutes: 2)).toString();
+
+    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ar");
+    expect(result, equals('قبل دقيقتين'));
+  });
+
+  test(
+      'should support Arabic locale with the difference of 9 minutes', () async {
+    final stringDateTime = now.subtract(const Duration(minutes: 9)).toString();
+
+    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ar");
+    expect(result, equals('قبل ۹ دقائق'));
+  });
 }

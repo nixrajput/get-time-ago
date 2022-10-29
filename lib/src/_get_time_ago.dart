@@ -13,11 +13,15 @@ import 'package:get_time_ago/src/messages/languages/zh_cn_msg.dart';
 import 'package:get_time_ago/src/messages/languages/zh_tw_msg.dart';
 import 'package:get_time_ago/src/messages/messages.dart';
 import 'package:intl/intl.dart';
+import 'messages/languages/ar_msg.dart';
+
+import 'messages/languages/ur_msg.dart';
 
 class GetTimeAgo {
   static String _defaultLocale = 'en';
 
   static final Map<String, Messages> _messageMap = {
+    'ar': ArabicMessages(),
     'en': EnglishMessages(),
     'es': EspanaMessages(),
     'fr': FrenchMessages(),
@@ -32,6 +36,7 @@ class GetTimeAgo {
     'de': GermanMessages(),
     'id': IndonesianMessages(),
     'tr': TurkishMessages(),
+    'ur': UrduMessages(),
   };
 
   /// Sets the default [locale]. By default it is `en`.
