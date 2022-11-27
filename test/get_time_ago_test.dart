@@ -75,6 +75,13 @@ void main() {
       expect(result, equals('1分前'));
     });
 
+    test('should support a Vietnamese locale', () async {
+      final dateTime = now.subtract(const Duration(minutes: 1));
+
+      var result = GetTimeAgo.parse(dateTime, locale: 'vi');
+      expect(result, equals('1 phút trước'));
+    });
+
     test('should support an Occitan locale', () async {
       final dateTime = now.subtract(const Duration(hours: 10));
       // Set default locale to 'oc'
