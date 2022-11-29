@@ -15,7 +15,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: ^1.1.7
+  get_time_ago: ^1.1.8
 ```
 
 ## Usage

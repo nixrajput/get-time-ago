@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 1.1.8
+
+- Added support for `Vietnamese` (vi) locale.
+- All known issues have been fixed.
+
 ## 1.1.7
 
 - Added Urdu (ur) and Arabic (ar) locales support.
