@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## 1.2.0
+
+- `intl` version updated.
+- All known bugs fixed.
+
 ## 1.1.8
 
 - Added support for `Vietnamese` (vi) locale.

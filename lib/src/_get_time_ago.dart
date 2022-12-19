@@ -1,3 +1,4 @@
+import 'package:get_time_ago/src/messages/languages/ar_msg.dart';
 import 'package:get_time_ago/src/messages/languages/de_msg.dart';
 import 'package:get_time_ago/src/messages/languages/en_msg.dart';
 import 'package:get_time_ago/src/messages/languages/es_msg.dart';
@@ -9,15 +10,12 @@ import 'package:get_time_ago/src/messages/languages/ko_msg.dart';
 import 'package:get_time_ago/src/messages/languages/oc_msg.dart';
 import 'package:get_time_ago/src/messages/languages/pt_br_msg.dart';
 import 'package:get_time_ago/src/messages/languages/tr_msg.dart';
+import 'package:get_time_ago/src/messages/languages/ur_msg.dart';
 import 'package:get_time_ago/src/messages/languages/vi_msg.dart';
 import 'package:get_time_ago/src/messages/languages/zh_cn_msg.dart';
 import 'package:get_time_ago/src/messages/languages/zh_tw_msg.dart';
 import 'package:get_time_ago/src/messages/messages.dart';
 import 'package:intl/intl.dart';
-
-import 'messages/languages/ar_msg.dart';
-
-import 'messages/languages/ur_msg.dart';
 
 class GetTimeAgo {
   static String _defaultLocale = 'en';

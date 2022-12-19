@@ -32,4 +32,3 @@ class VietnameseMessages implements Messages {
   @override
   String wordSeparator() => ' ';
 }
-
