@@ -2,7 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## 1.2.1
+
+- **Documentation**: Updated documentation.
+- **Fix**: All known bugs and issues fixed.
 
 ## 1.2.0
 

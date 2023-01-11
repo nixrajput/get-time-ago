@@ -3,11 +3,18 @@
 A Flutter package to convert and format `DateTime` object into `get_time_ago` format to get  
 String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 
-[![pub package](https://img.shields.io/pub/v/get_time_ago.svg)][pub]
+[![pub package](https://img.shields.io/pub/v/get_time_ago.svg?label=Version)][pub]
+[![Stars](https://img.shields.io/github/stars/nixrajput/get-time-ago?label=Stars)][repo]
+[![Forks](https://img.shields.io/github/forks/nixrajput/get-time-ago?label=Forks)][repo]
+[![Watchers](https://img.shields.io/github/watchers/nixrajput/get-time-ago?label=Watchers)][repo]
+[![Contributors](https://img.shields.io/github/contributors/nixrajput/get-time-ago?label=Contributors)][repo]
 [![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg)][pub]
-[![Flutter](https://img.shields.io/badge/Flutter-3.3.0-blue.svg)](https://flutter.io/)
-[![Dart](https://img.shields.io/badge/Dart-2.18.0-blue.svg)](https://www.dartlang.org/)
-[![Code Climate](https://codeclimate.com/github/nixrajput/get-time-ago/badges/gpa.svg)](https://codeclimate.com/github/nixrajput/get-time-ago)
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/nixrajput/get-time-ago?label=Latest)][releases]
+[![GitHub last commit](https://img.shields.io/github/last-commit/nixrajput/get-time-ago?label=Last+Commit)][repo]
+[![GitHub issues](https://img.shields.io/github/issues/nixrajput/get-time-ago?label=Issues)][issues]
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/nixrajput/get-time-ago?label=Pull+Requests)][pulls]
+[![GitHub Licence](https://img.shields.io/github/license/nixrajput/get-time-ago?label=Licence)][license]
 
 ## Installation
 
@@ -15,7 +22,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: ^1.2.0
+  get_time_ago: latest_version
 ```
 
 ## Usage
@@ -110,10 +117,9 @@ Overriding `en` Locale Messages with Custom Messages
 GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 ```
 
-## Screenshots
+## Demo
 
-<img width="400" alt="Screenshot_1" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_1.png" />
-<img width="400" alt="Screenshot_2" src="https://raw.githubusercontent.com/nixrajput/get-time-ago/master/screenshots/get_time_ago_2.png" />
+[View Demo](https://nixrajput.github.io/get_time_ago)
 
 ## Activities
 
@@ -121,22 +127,20 @@ GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 
 ## Connect With Me
 
-[<img align="left" alt="nixrajput | Website" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/globe-icon.svg" />][website]
-
-[<img align="left" alt="nixrajput | GitHub" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/github-brands.svg" />][github]
-
-[<img align="left" alt="nixrajput | Instagram" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/instagram-brands.svg" />][instagram]
-
-[<img align="left" alt="nixrajput | Facebook" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/facebook-brands.svg" />][facebook]
-
-[<img align="left" alt="nixrajput | Twitter" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/twitter-brands.svg" />][twitter]
-
-[<img align="left" alt="nixrajput | LinkedIn" width="24px" src="https://raw.githubusercontent.com/nixrajput/nixlab-files/master/images/icons/linkedin-in-brands.svg" />][linkedin]
+[![Instagram: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Instagram&logoColor=fff)][instagram]
+[![Linkedin: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Linkedin&logoColor=fff)][linkedin]
+[![GitHub: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Github&logoColor=fff)][github]
+[![Twitter: nixrajput07](https://img.shields.io/badge/nixrajput07-141430?logo=Twitter&logoColor=fff)][twitter]
+[![Facebook: nixrajput07](https://img.shields.io/badge/nixrajput07-141430?logo=Facebook&logoColor=fff)][facebook]
 
 [pub]: https://pub.dev/packages/get_time_ago
 [github]: https://github.com/nixrajput
-[website]: https://nixlab.co.in
 [facebook]: https://facebook.com/nixrajput07
 [twitter]: https://twitter.com/nixrajput07
 [instagram]: https://instagram.com/nixrajput
 [linkedin]: https://linkedin.com/in/nixrajput
+[releases]: https://github.com/nixrajput/get-time-ago/releases
+[repo]: https://github.com/nixrajput/get-time-ago
+[issues]: https://github.com/nixrajput/get-time-ago/issues
+[license]: https://github.com/nixrajput/get-time-ago/blob/master/LICENSE.md
+[pulls]: https://github.com/nixrajput/get-time-ago/pulls
