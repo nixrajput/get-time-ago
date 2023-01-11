@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_time_ago/get_time_ago.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -39,12 +42,6 @@ class _HomePageState extends State<HomePage> {
         _dateTime = pickedDate;
       });
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    //GetTimeAgo.setDefaultLocale('hi');
   }
 
   @override
@@ -130,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                         label: const Text('Select DateTime'),
                       ),
                       const SizedBox(height: 10.0),
-                      Text(_dateTime.toString()),
+                      Text(_dateTime.toIso8601String()),
                       const SizedBox(height: 5.0),
                       Text(
                         GetTimeAgo.parse(_dateTime),
