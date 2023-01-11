@@ -119,7 +119,7 @@ GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 
 ## Demo
 
-[View Demo](https://nixrajput.github.io/get_time_ago)
+[View Demo](https://nixrajput.github.io/get-time-ago)
 
 ## Activities
 
