@@ -12,11 +12,13 @@ class MyApp extends StatelessWidget {
         title: 'GetTimeAgo Example',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-            brightness: Brightness.light),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          brightness: Brightness.light,
+        ),
         darkTheme: ThemeData(
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-            brightness: Brightness.dark),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          brightness: Brightness.dark,
+        ),
         home: HomePage(),
       );
 }

@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.2
+
+- **Change**: Removed unnecessary dependencies.
+- **Fix**: All known bugs and issues fixed.
+
 ## 1.2.1
 
 - **Documentation**: Updated documentation.
