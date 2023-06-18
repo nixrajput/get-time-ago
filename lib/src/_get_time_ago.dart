@@ -51,8 +51,8 @@ class GetTimeAgo {
 
   static void setDefaultLocale(String locale) {
     assert(
-    _messageMap.containsKey(locale),
-    '[locale] must be a valid locale',
+      _messageMap.containsKey(locale),
+      '[locale] must be a valid locale',
     );
     _defaultLocale = locale;
   }
@@ -69,8 +69,10 @@ class GetTimeAgo {
   /// [Messages] interface with the desired messages
   ///
 
-  static void setCustomLocaleMessages(String customLocale,
-      Messages customMessages,) {
+  static void setCustomLocaleMessages(
+    String customLocale,
+    Messages customMessages,
+  ) {
     _messageMap[customLocale] = customMessages;
   }
 
@@ -79,7 +81,8 @@ class GetTimeAgo {
   /// - If [locale] is passed will look for message for that locale.
   /// - If [pattern] is passed will be used as the DateFormat pattern.
 
-  static String parse(DateTime dateTime, {
+  static String parse(
+    DateTime dateTime, {
     String? locale,
     String? pattern,
   }) {
@@ -89,8 +92,8 @@ class GetTimeAgo {
     final date = DateFormat(_pattern).format(dateTime);
     var _currentClock = DateTime.now();
     var elapsed =
-    (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
-        .abs();
+        (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
+            .abs();
 
     var _prefix = _message.prefixAgo();
     var _suffix = _message.suffixAgo();

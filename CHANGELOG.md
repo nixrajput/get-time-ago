@@ -1,7 +1,13 @@
 # Changelog
 
+## 1.2.4
+
+- **Change**: Added support for `Persian` (fa) locale.
+- **Fix**: All known bugs and issues fixed.
+
 ## 1.2.3
 
+- **Change**: `intl` version updated.
 - **Change**: Removed unnecessary dependencies.
 - **Fix**: All known bugs and issues fixed.
 
