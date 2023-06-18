@@ -3,6 +3,7 @@ export 'package:get_time_ago/src/messages/languages/ar_msg.dart';
 export 'package:get_time_ago/src/messages/languages/de_msg.dart';
 export 'package:get_time_ago/src/messages/languages/en_msg.dart';
 export 'package:get_time_ago/src/messages/languages/es_msg.dart';
+export 'package:get_time_ago/src/messages/languages/fa_msg.dart';
 export 'package:get_time_ago/src/messages/languages/fr_msg.dart';
 export 'package:get_time_ago/src/messages/languages/hi_msg.dart';
 export 'package:get_time_ago/src/messages/languages/id_msg.dart';

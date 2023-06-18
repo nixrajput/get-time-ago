@@ -2,6 +2,7 @@ import 'package:get_time_ago/src/messages/languages/ar_msg.dart';
 import 'package:get_time_ago/src/messages/languages/de_msg.dart';
 import 'package:get_time_ago/src/messages/languages/en_msg.dart';
 import 'package:get_time_ago/src/messages/languages/es_msg.dart';
+import 'package:get_time_ago/src/messages/languages/fa_msg.dart';
 import 'package:get_time_ago/src/messages/languages/fr_msg.dart';
 import 'package:get_time_ago/src/messages/languages/hi_msg.dart';
 import 'package:get_time_ago/src/messages/languages/id_msg.dart';
@@ -24,6 +25,7 @@ class GetTimeAgo {
     'ar': ArabicMessages(),
     'en': EnglishMessages(),
     'es': EspanaMessages(),
+    'fa': PersianMessages(),
     'fr': FrenchMessages(),
     'hi': HindiMessages(),
     'pt': PortugueseBrazilMessages(),
@@ -49,8 +51,8 @@ class GetTimeAgo {
 
   static void setDefaultLocale(String locale) {
     assert(
-      _messageMap.containsKey(locale),
-      '[locale] must be a valid locale',
+    _messageMap.containsKey(locale),
+    '[locale] must be a valid locale',
     );
     _defaultLocale = locale;
   }
@@ -67,10 +69,8 @@ class GetTimeAgo {
   /// [Messages] interface with the desired messages
   ///
 
-  static void setCustomLocaleMessages(
-    String customLocale,
-    Messages customMessages,
-  ) {
+  static void setCustomLocaleMessages(String customLocale,
+      Messages customMessages,) {
     _messageMap[customLocale] = customMessages;
   }
 
@@ -79,8 +79,7 @@ class GetTimeAgo {
   /// - If [locale] is passed will look for message for that locale.
   /// - If [pattern] is passed will be used as the DateFormat pattern.
 
-  static String parse(
-    DateTime dateTime, {
+  static String parse(DateTime dateTime, {
     String? locale,
     String? pattern,
   }) {
@@ -90,8 +89,8 @@ class GetTimeAgo {
     final date = DateFormat(_pattern).format(dateTime);
     var _currentClock = DateTime.now();
     var elapsed =
-        (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
-            .abs();
+    (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
+        .abs();
 
     var _prefix = _message.prefixAgo();
     var _suffix = _message.suffixAgo();
