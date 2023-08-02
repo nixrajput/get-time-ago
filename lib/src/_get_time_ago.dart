@@ -15,6 +15,7 @@ import 'package:get_time_ago/src/messages/languages/ur_msg.dart';
 import 'package:get_time_ago/src/messages/languages/vi_msg.dart';
 import 'package:get_time_ago/src/messages/languages/zh_cn_msg.dart';
 import 'package:get_time_ago/src/messages/languages/zh_tw_msg.dart';
+import 'package:get_time_ago/src/messages/languages/ro_msg.dart';
 import 'package:get_time_ago/src/messages/messages.dart';
 import 'package:intl/intl.dart';
 
@@ -40,6 +41,7 @@ class GetTimeAgo {
     'tr': TurkishMessages(),
     'ur': UrduMessages(),
     'vi': VietnameseMessages(),
+    'ro': RomanianMessages(),
   };
 
   /// Sets the default [locale]. By default it is `en`.

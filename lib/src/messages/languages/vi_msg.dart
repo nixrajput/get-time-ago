@@ -1,6 +1,6 @@
 import '../messages.dart';
 
-/// English Messages
+/// Vietnamese Messages
 class VietnameseMessages implements Messages {
   @override
   String prefixAgo() => '';
