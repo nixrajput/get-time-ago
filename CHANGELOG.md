@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.5
+
+- **Change**: LICENSE changed to MIT.
+- **Change**: Added support for `Romanian` (ro) locale.
+- **Change**: Dependencies updated.
+- **Fix**: All known bugs and issues fixed.
+
 ## 1.2.4
 
 - **Change**: Added support for `Persian` (fa) locale.

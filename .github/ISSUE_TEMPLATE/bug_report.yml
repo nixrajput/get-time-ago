@@ -25,7 +25,7 @@ body:
     attributes:
       label: Version
       description: What version of our app are you running?
-      placeholder: 2.0.1
+      placeholder: ^0.0.1
     validations:
       required: true
   - type: dropdown
