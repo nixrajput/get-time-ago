@@ -22,7 +22,7 @@ Add `get_time_ago` as a dependency in your pubspec.yaml file.
 
 ```dart
 dependencies:
-  get_time_ago: latest_version
+  get_time_ago: "latest_version"
 ```
 
 ## Usage
@@ -129,9 +129,8 @@ GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 
 [![Instagram: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Instagram&logoColor=fff)][instagram]
 [![Linkedin: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Linkedin&logoColor=fff)][linkedin]
-[![GitHub: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Github&logoColor=fff)][github]
 [![Twitter: nixrajput07](https://img.shields.io/badge/nixrajput07-141430?logo=Twitter&logoColor=fff)][twitter]
-[![Facebook: nixrajput07](https://img.shields.io/badge/nixrajput07-141430?logo=Facebook&logoColor=fff)][facebook]
+[![GitHub: nixrajput](https://img.shields.io/badge/nixrajput-141430?logo=Github&logoColor=fff)][github]
 
 [pub]: https://pub.dev/packages/get_time_ago
 [github]: https://github.com/nixrajput
