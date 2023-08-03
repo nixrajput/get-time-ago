@@ -90,6 +90,15 @@ void main() {
       var result = GetTimeAgo.parse(dateTime);
       expect(result, equals('fa 10 oras'));
     });
+
+    test('should support an Romaninan locale', () async {
+      final dateTime = now.subtract(const Duration(hours: 10));
+      // Set default locale to 'ro'
+      GetTimeAgo.setDefaultLocale('ro');
+
+      var result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('acum 10 ore'));
+    });
   });
 
   test('should support Urdu locale with the difference in seconds', () async {
