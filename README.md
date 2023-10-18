@@ -20,6 +20,7 @@ String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
 
 - [get\_time\_ago](#get_time_ago)
   - [Table of Contents](#table-of-contents)
+  - [Screenshots](#screenshots)
   - [Demo](#demo)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -31,6 +32,10 @@ String like `10 seconds ago`, `a minute ago`, `7 hours ago`, etc.
   - [Sponsor Me](#sponsor-me)
   - [Connect With Me](#connect-with-me)
   - [Activities](#activities)
+
+## Screenshots
+
+Adding soon...
 
 ## Demo
 
