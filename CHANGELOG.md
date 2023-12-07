@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+
+- **Change**: Dependencies updated.
+- **Fix**: All known bugs and issues fixed.
+
 ## 1.2.5
 
 - **Change**: LICENSE changed to MIT.
