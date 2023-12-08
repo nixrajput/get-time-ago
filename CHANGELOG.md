@@ -3,6 +3,7 @@
 ## 1.3.0
 
 - **Change**: Dependencies updated.
+- **Documentation**: Updated the documentation to show all contributors.
 - **Fix**: All known bugs and issues fixed.
 
 ## 1.2.5
