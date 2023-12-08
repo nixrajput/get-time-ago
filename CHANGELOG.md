@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1
+
+- **Fix**: Lint errors and warnings fixed.
+
 ## 1.3.0
 
 - **Change**: Dependencies updated.

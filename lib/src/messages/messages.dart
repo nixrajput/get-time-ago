@@ -1,4 +1,6 @@
-/// [Messages] Template
+/// Define [Messages] Template
+
+library get_time_ago;
 
 abstract class Messages {
   /// Example: `prefixAgo()` 1 min `suffixAgo()`
