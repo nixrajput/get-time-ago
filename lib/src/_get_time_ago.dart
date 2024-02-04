@@ -2,6 +2,7 @@ import 'package:get_time_ago/src/messages/languages/ar_msg.dart';
 import 'package:get_time_ago/src/messages/languages/de_msg.dart';
 import 'package:get_time_ago/src/messages/languages/en_msg.dart';
 import 'package:get_time_ago/src/messages/languages/es_msg.dart';
+import 'package:get_time_ago/src/messages/languages/it_msg.dart';
 import 'package:get_time_ago/src/messages/languages/fa_msg.dart';
 import 'package:get_time_ago/src/messages/languages/fr_msg.dart';
 import 'package:get_time_ago/src/messages/languages/hi_msg.dart';
@@ -38,6 +39,7 @@ class GetTimeAgo {
     'ko': KoreanMessages(),
     'de': GermanMessages(),
     'id': IndonesianMessages(),
+    'it' :ItalianMessages(),
     'tr': TurkishMessages(),
     'ur': UrduMessages(),
     'vi': VietnameseMessages(),
@@ -90,8 +92,8 @@ class GetTimeAgo {
   }) {
     final _locale = locale ?? _defaultLocale;
     final _message = _messageMap[_locale] ?? EnglishMessages();
-    final _pattern = pattern ?? "dd MMM, yyyy hh:mm aa";
-    final date = DateFormat(_pattern).format(dateTime);
+    final _pattern =  locale == "en" ? (pattern ?? "dd MMM yyyy HH:mm aa") : (pattern ?? "dd MMM yyyy HH:mm");
+    final date = DateFormat(_pattern, locale).format(dateTime);
     var _currentClock = DateTime.now();
     var elapsed =
         (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
