@@ -7,6 +7,7 @@ export 'package:get_time_ago/src/messages/languages/fa_msg.dart';
 export 'package:get_time_ago/src/messages/languages/fr_msg.dart';
 export 'package:get_time_ago/src/messages/languages/hi_msg.dart';
 export 'package:get_time_ago/src/messages/languages/id_msg.dart';
+export 'package:get_time_ago/src/messages/languages/it_msg.dart';
 export 'package:get_time_ago/src/messages/languages/ja_msg.dart';
 export 'package:get_time_ago/src/messages/languages/ko_msg.dart';
 export 'package:get_time_ago/src/messages/languages/oc_msg.dart';
