@@ -12,13 +12,13 @@ class KoreanMessages implements Messages {
   String secsAgo(int seconds) => '$seconds초';
 
   @override
-  String minAgo(int minutes) => '일분';
+  String minAgo(int minutes) => '1분';
 
   @override
   String minsAgo(int minutes) => '$minutes분';
 
   @override
-  String hourAgo(int minutes) => '한시간';
+  String hourAgo(int minutes) => '1시간';
 
   @override
   String hoursAgo(int hours) => '$hours시간';
@@ -30,5 +30,5 @@ class KoreanMessages implements Messages {
   String daysAgo(int days) => '$days일';
 
   @override
-  String wordSeparator() => '';
+  String wordSeparator() => ' ';
 }
