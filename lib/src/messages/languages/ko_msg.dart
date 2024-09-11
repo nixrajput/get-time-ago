@@ -9,6 +9,9 @@ class KoreanMessages implements Messages {
   String suffixAgo() => '전';
 
   @override
+  String justNow(int seconds) => '바로 지금';
+
+  @override
   String secsAgo(int seconds) => '$seconds초';
 
   @override

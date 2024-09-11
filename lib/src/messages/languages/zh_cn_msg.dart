@@ -9,6 +9,9 @@ class SimplifiedChineseMessages implements Messages {
   String suffixAgo() => '前';
 
   @override
+  String justNow(int seconds) => '刚才';
+
+  @override
   String secsAgo(int seconds) => '$seconds秒';
 
   @override

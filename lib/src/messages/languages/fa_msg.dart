@@ -10,6 +10,9 @@ class PersianMessages extends Messages {
   String suffixAgo() => 'پیش';
 
   @override
+  String justNow(int seconds) => 'همین الان';
+
+  @override
   String secsAgo(int seconds) => '${convertToUrduNumbers(seconds)} ثانیه';
 
   @override

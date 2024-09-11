@@ -5,17 +5,53 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  check_up_to_date:
+    name: Checkout Repository
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
+      - name: Checkout Code
+        uses: actions/checkout@v4
         with:
-          channel: beta
-      - run: flutter config --enable-web
-      - run: flutter pub get
-      - uses: bluefireteam/flutter-gh-pages@v7
+          fetch-depth: 0 # Fetch all history so we can compare
+
+      - name: Fetch all branches
+        run: git fetch origin
+
+      - name: Check if branch is up-to-date with master
+        run: |
+          # Compare the current branch with the master branch
+          if git merge-base --is-ancestor origin/master HEAD; then
+            echo "The current branch is up-to-date with master."
+          else
+            echo "The current branch is not up-to-date with master."
+            exit 1
+          fi
+
+  setup_and_deploy:
+    name: Setup Flutter and Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: check_up_to_date
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.24.x
+
+      - name: Check Flutter Version
+        run: flutter --version
+
+      - name: Get Flutter Dependencies
+        run: flutter pub get
+
+      - name: Run Flutter Analyzer (Lint)
+        run: flutter analyze
+
+      - name: Deploy to GitHub Pages
+        uses: bluefireteam/flutter-gh-pages@v8
         with:
           workingDir: example
           baseHref: /get-time-ago/

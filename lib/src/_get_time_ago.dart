@@ -1,76 +1,38 @@
-import 'package:get_time_ago/src/messages/languages/ar_msg.dart';
-import 'package:get_time_ago/src/messages/languages/de_msg.dart';
-import 'package:get_time_ago/src/messages/languages/en_msg.dart';
-import 'package:get_time_ago/src/messages/languages/es_msg.dart';
-import 'package:get_time_ago/src/messages/languages/fa_msg.dart';
-import 'package:get_time_ago/src/messages/languages/fr_msg.dart';
-import 'package:get_time_ago/src/messages/languages/hi_msg.dart';
-import 'package:get_time_ago/src/messages/languages/id_msg.dart';
-import 'package:get_time_ago/src/messages/languages/ja_msg.dart';
-import 'package:get_time_ago/src/messages/languages/ko_msg.dart';
-import 'package:get_time_ago/src/messages/languages/oc_msg.dart';
-import 'package:get_time_ago/src/messages/languages/pt_br_msg.dart';
-import 'package:get_time_ago/src/messages/languages/ro_msg.dart';
-import 'package:get_time_ago/src/messages/languages/tr_msg.dart';
-import 'package:get_time_ago/src/messages/languages/ur_msg.dart';
-import 'package:get_time_ago/src/messages/languages/vi_msg.dart';
-import 'package:get_time_ago/src/messages/languages/zh_cn_msg.dart';
-import 'package:get_time_ago/src/messages/languages/zh_tw_msg.dart';
-import 'package:get_time_ago/src/messages/messages.dart';
+import 'package:get_time_ago/src/utils/data.dart';
 import 'package:intl/intl.dart';
 
+import 'messages/messages.dart';
+import 'utils/utility.dart';
+
+/// The `GetTimeAgo` class provides functionality to format a `DateTime` object into a
+/// human-readable "time ago" string such as "a minute ago", "5 days ago", etc.
+/// It supports multiple locales and allows for custom locale messages.
+/// You can also specify custom date formats for cases where the time difference is too large.
+/// The class handles different time units such as seconds, minutes, hours, and days, and provides
+/// localized messages accordingly.
 class GetTimeAgo {
-  static String _defaultLocale = 'en';
+  /// The default locale for the time ago messages, initially set to the default locale in Data.
+  static String _defaultLocale = Data.defaultLocale;
 
-  static final Map<String, Messages> _messageMap = {
-    'ar': ArabicMessages(),
-    'en': EnglishMessages(),
-    'es': EspanaMessages(),
-    'fa': PersianMessages(),
-    'fr': FrenchMessages(),
-    'hi': HindiMessages(),
-    'pt': PortugueseBrazilMessages(),
-    'br': PortugueseBrazilMessages(),
-    'zh': SimplifiedChineseMessages(),
-    'zh_tr': TraditionalChineseMessages(),
-    'ja': JapaneseMessages(),
-    'oc': OccitanMessages(),
-    'ko': KoreanMessages(),
-    'de': GermanMessages(),
-    'id': IndonesianMessages(),
-    'tr': TurkishMessages(),
-    'ur': UrduMessages(),
-    'vi': VietnameseMessages(),
-    'ro': RomanianMessages(),
-  };
+  /// A map that stores different message formats for various locales.
+  /// Each locale is mapped to its corresponding Messages object.
+  static final Map<String, Messages> _messageMap = Data.messagesMap;
 
-  /// Sets the default [locale]. By default it is `en`.
+  /// Sets the default [locale] to be used if no specific locale is passed in the parse function.
+  /// By default, it is set to 'en' (English).
   ///
-  /// Example:
-  /// ```dart
-  /// setDefaultLocale('hi');
-  /// ```
-
+  /// Throws an [ArgumentError] if the provided locale is not available in [_messageMap].
   static void setDefaultLocale(String locale) {
-    assert(
-      _messageMap.containsKey(locale),
-      '[locale] must be a valid locale',
-    );
+    if (!_messageMap.containsKey(locale)) {
+      throw ArgumentError('[locale] must be a valid locale');
+    }
     _defaultLocale = locale;
   }
 
-  /// Sets a [customLocale] with the provided [customMessages]
-  /// to be available when using the [parse] function.
+  /// Sets a [customLocale] with the provided [customMessages] to be available for use in time ago formatting.
   ///
-  /// Example:
-  /// ```dart
-  /// setLocaleMessages('hi', HindiMessages());
-  /// ```
-  ///
-  /// If you want to define locale message implement
-  /// [Messages] interface with the desired messages
-  ///
-
+  /// This allows you to define custom messages for new locales.
+  /// To implement this, you need to define the [Messages] interface and provide the required messages.
   static void setCustomLocaleMessages(
     String customLocale,
     Messages customMessages,
@@ -78,106 +40,107 @@ class GetTimeAgo {
     _messageMap[customLocale] = customMessages;
   }
 
-  /// [parse] formats provided [dateTime] to a formatted time
-  /// like 'a minute ago'.
-  /// - If [locale] is passed will look for message for that locale.
-  /// - If [pattern] is passed will be used as the DateFormat pattern.
-
+  /// [parse] function formats the provided [dateTime] into a human-readable time ago string.
+  /// Example output: 'a minute ago', '5 days ago', etc.
+  ///
+  /// - If [locale] is passed, it uses the messages for that locale. Otherwise, it defaults to [_defaultLocale].
+  /// - If [pattern] is passed, it will use the custom DateFormat pattern for displaying the date.
+  ///
+  /// The function computes the time difference between the current time and [dateTime] and returns an appropriate message.
   static String parse(
     DateTime dateTime, {
     String? locale,
     String? pattern,
   }) {
-    final _locale = locale ?? _defaultLocale;
-    final _message = _messageMap[_locale] ?? EnglishMessages();
-    final _pattern = pattern ?? "dd MMM, yyyy hh:mm aa";
-    final date = DateFormat(_pattern).format(dateTime);
-    var _currentClock = DateTime.now();
-    var elapsed =
-        (_currentClock.millisecondsSinceEpoch - dateTime.millisecondsSinceEpoch)
-            .abs();
+    // Get the locale, if not provided, fallback to the default locale.
+    final selectedLocale = locale ?? _defaultLocale;
 
-    var _prefix = _message.prefixAgo();
-    var _suffix = _message.suffixAgo();
+    // Retrieve the message set for the locale. If not found, fallback to default messages.
+    final message = _messageMap[selectedLocale] ?? Data.defaultMessages;
 
-    /// Getting [seconds], [minutes], [hours], [days] from
-    /// provided [dateTime] by subtracting it from current [DateTime.now()].
+    // Format the dateTime using the provided pattern or the default pattern.
+    final formattedDate =
+        DateFormat(pattern ?? "dd MMM, yyyy hh:mm aa").format(dateTime);
 
-    final num seconds = elapsed / 1000;
-    final num minutes = seconds / 60;
-    final num hours = minutes / 60;
-    final num days = hours / 24;
+    // Get the current time for comparison.
+    final currentClock = DateTime.now();
 
-    String msg;
+    // Calculate the time difference between now and the provided dateTime.
+    final elapsed = currentClock.difference(dateTime).abs();
+
+    // Retrieve the prefix and suffix for the time ago message.
+    final prefix = message.prefixAgo();
+    final suffix = message.suffixAgo();
     String result;
 
-    /// If [elapsed] is less than 1 minute.
-    if (seconds < 59) {
-      msg = _message.secsAgo(seconds.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is less than 2 minutes and
-    /// greater than 1 minute.
-    else if (seconds < 119) {
-      msg = _message.minAgo(minutes.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is less than 1 hour and
-    /// greater than 2 minutes.
-    else if (minutes < 59) {
-      msg = _message.minsAgo(minutes.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is less than 2 hours and
-    /// greater than 1 hour.
-    else if (minutes < 119) {
-      msg = _message.hourAgo(hours.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is less than 24 hours and
-    /// greater than 2 hours.
-    else if (hours < 24) {
-      msg = _message.hoursAgo(hours.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is less than 2 days and
-    /// greater than 24 hours.
-    else if (hours < 48) {
-      msg = _message.dayAgo(hours.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is less than 8 days and
-    /// greater than 1 day.
-    else if (days < 8) {
-      msg = _message.daysAgo(days.round());
-      result = [_prefix, msg, _suffix]
-          .where((res) => res.isNotEmpty)
-          .join(_message.wordSeparator());
-    }
-
-    /// If [elapsed] is greater than 8 days,
-    /// a formatted [Date] will be returned.
-    else {
-      msg = date;
-      result = date;
+    // Determine the appropriate message based on the elapsed time.
+    if (elapsed.inSeconds < 15) {
+      // If the time difference is less than 15 seconds, display "just now".
+      result = formatMessage(
+        '',
+        message.justNow(elapsed.inSeconds),
+        '',
+        message,
+      );
+    } else if (elapsed.inSeconds < 60) {
+      // If the time difference is less than 60 seconds, display the seconds ago message.
+      result = formatMessage(
+        prefix,
+        message.secsAgo(elapsed.inSeconds),
+        suffix,
+        message,
+      );
+    } else if (elapsed.inMinutes < 2) {
+      // If the time difference is less than 2 minutes, display "a minute ago".
+      result = formatMessage(
+        prefix,
+        message.minAgo(elapsed.inMinutes),
+        suffix,
+        message,
+      );
+    } else if (elapsed.inMinutes < 60) {
+      // If the time difference is less than 60 minutes, display the minutes ago message.
+      result = formatMessage(
+        prefix,
+        message.minsAgo(elapsed.inMinutes),
+        suffix,
+        message,
+      );
+    } else if (elapsed.inHours < 2) {
+      // If the time difference is less than 2 hours, display "an hour ago".
+      result = formatMessage(
+        prefix,
+        message.hourAgo(elapsed.inHours),
+        suffix,
+        message,
+      );
+    } else if (elapsed.inHours < 24) {
+      // If the time difference is less than 24 hours, display the hours ago message.
+      result = formatMessage(
+        prefix,
+        message.hoursAgo(elapsed.inHours),
+        suffix,
+        message,
+      );
+    } else if (elapsed.inHours < 48) {
+      // If the time difference is less than 48 hours, display "a day ago".
+      result = formatMessage(
+        prefix,
+        message.dayAgo(elapsed.inHours ~/ 24),
+        suffix,
+        message,
+      );
+    } else if (elapsed.inDays < 8) {
+      // If the time difference is less than 8 days, display the days ago message.
+      result = formatMessage(
+        prefix,
+        message.daysAgo(elapsed.inDays),
+        suffix,
+        message,
+      );
+    } else {
+      // If the time difference is greater than 7 days, display the formatted date.
+      result = formattedDate;
     }
 
     return result;

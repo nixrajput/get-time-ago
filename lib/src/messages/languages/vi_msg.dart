@@ -9,6 +9,9 @@ class VietnameseMessages implements Messages {
   String suffixAgo() => 'trước';
 
   @override
+  String justNow(int seconds) => 'ngay bây giờ';
+
+  @override
   String secsAgo(int seconds) => '$seconds giây';
 
   @override

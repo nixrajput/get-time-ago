@@ -1,12 +1,17 @@
 import '../messages.dart';
 
-/// German Messages
+/// The [GermanMessages] class provides German language-specific
+/// implementations of the [Messages] interface. This class is used to format
+/// the "time ago" strings in German.
 class GermanMessages implements Messages {
   @override
   String prefixAgo() => 'vor';
 
   @override
   String suffixAgo() => '';
+
+  @override
+  String justNow(int seconds) => 'vorhin';
 
   @override
   String secsAgo(int seconds) => '$seconds Sekunden';

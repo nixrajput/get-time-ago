@@ -1,35 +1,49 @@
-/// Define [Messages] Template
-
-library get_time_ago;
-
+/// The [Messages] abstract class defines the interface for localization messages
+/// used in formatting "time ago" strings. Implementations of this class should
+/// provide specific messages for different time intervals (e.g., seconds, minutes, hours)
+/// and optional prefix/suffix strings to be used in the final output.
 abstract class Messages {
-  /// Example: `prefixAgo()` 1 min `suffixAgo()`
+  /// Prefix added before the time ago message.
+  /// Example: 'about' or '' (empty).
   String prefixAgo();
 
-  /// Example: `prefixAgo()` 1 min `suffixAgo()`
+  /// Suffix added after the time ago message.
+  /// Example: 'ago' or '' (empty).
   String suffixAgo();
 
-  /// When time is less than a minute
+  /// Message when the elapsed time is less than 15 seconds.
+  /// [seconds]: The number of seconds that have passed.
+  String justNow(int seconds);
+
+  /// Message when the elapsed time is less than a minute.
+  /// [seconds]: The number of seconds that have passed.
   String secsAgo(int seconds);
 
-  /// When time is about a minute
+  /// Message for approximately 1 minute ago.
+  /// [minutes]: The number of minutes that have passed (usually 1).
   String minAgo(int minutes);
 
-  /// When time is in minutes
+  /// Message when the elapsed time is in minutes.
+  /// [minutes]: The number of minutes that have passed.
   String minsAgo(int minutes);
 
-  /// When time is about an hour
+  /// Message for approximately 1 hour ago.
+  /// [minutes]: The number of minutes that have passed (usually 60).
   String hourAgo(int minutes);
 
-  /// When time is in hours
+  /// Message when the elapsed time is in hours.
+  /// [hours]: The number of hours that have passed.
   String hoursAgo(int hours);
 
-  /// When time is a day
+  /// Message for approximately 1 day ago.
+  /// [hours]: The number of hours that have passed (usually 24).
   String dayAgo(int hours);
 
-  /// When time is in days
+  /// Message when the elapsed time is in days.
+  /// [days]: The number of days that have passed.
   String daysAgo(int days);
 
-  /// Word separator when words are concatenated
+  /// A word separator that concatenates words in a message.
+  /// By default, it returns a space (' ').
   String wordSeparator() => ' ';
 }

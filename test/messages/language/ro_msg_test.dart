@@ -12,8 +12,11 @@ void main() {
     expect(messages.suffixAgo(), '');
   });
 
+  test('justNow returns correct strings', () {
+    expect(messages.justNow(7), 'tocmai acum');
+  });
+
   test('secsAgo returns correct strings', () {
-    expect(messages.secsAgo(1), 'o secundă');
     expect(messages.secsAgo(5), '5 secunde');
   });
 

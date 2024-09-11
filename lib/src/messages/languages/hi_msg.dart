@@ -9,6 +9,9 @@ class HindiMessages implements Messages {
   String suffixAgo() => 'पहले';
 
   @override
+  String justNow(int seconds) => 'अभी';
+
+  @override
   String secsAgo(int seconds) => '$seconds क्षण';
 
   @override

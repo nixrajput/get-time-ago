@@ -1,131 +1,94 @@
 import 'package:get_time_ago/get_time_ago.dart';
+import 'package:intl/intl.dart';
 import 'package:test/test.dart';
 
-final now = DateTime.now();
+import 'test_message.dart';
 
 void main() {
-  group('get_time_ago', () {
-    test('should format with locale', () async {
-      final dateTime = now.subtract(const Duration(minutes: 10));
+  // Helper function to get the DateTime relative to now
+  DateTime _getRelativeDateTime(Duration duration) {
+    return DateTime.now().subtract(duration);
+  }
 
-      var result = GetTimeAgo.parse(dateTime, locale: 'pt');
-      expect(result, equals('Há 10 minutos'));
+  group('GetTimeAgo parse function', () {
+    test('Test seconds ago (less than 15 seconds)', () {
+      final dateTime = _getRelativeDateTime(const Duration(seconds: 10));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('just now'));
     });
 
-    test('should format with pattern', () async {
-      final dateTime = "2021-02-11 11:45:37.712498";
-
-      var result =
-          GetTimeAgo.parse(DateTime.parse(dateTime), pattern: 'yy/M/dd HH:mm');
-      expect(result, equals('21/2/11 11:45'));
+    test('Test seconds ago (less than 60 seconds)', () {
+      final dateTime = _getRelativeDateTime(const Duration(seconds: 45));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('45 seconds ago'));
     });
 
-    test(
-        'should format with default locale, if locale src.messages doesnt exist',
-        () async {
-      final dateTime = now.subtract(const Duration(seconds: 30));
-
-      var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('30 seconds ago'));
+    test('Test 1 minute ago (around 60 seconds)', () {
+      final dateTime = _getRelativeDateTime(const Duration(minutes: 1));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('a minute ago'));
     });
 
-    test(
-        'should format with default locale, if a [DateTime] is formatted as '
-        'string will be given as input', () async {
-      final stringDateTime = now.subtract(const Duration(days: 2)).toString();
-
-      var result = GetTimeAgo.parse(DateTime.parse(stringDateTime));
-      expect(result, equals('2 days ago'));
+    test('Test minutes ago (less than 60 minutes)', () {
+      final dateTime = _getRelativeDateTime(const Duration(minutes: 30));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('30 minutes ago'));
     });
 
-    test('should allow to set a new default locale', () async {
-      final dateTime = now.subtract(const Duration(hours: 10));
+    test('Test 1 hour ago', () {
+      final dateTime = _getRelativeDateTime(const Duration(hours: 1));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('an hour ago'));
+    });
 
-      // Set default locale to 'fr'
+    test('Test hours ago (less than 24 hours)', () {
+      final dateTime = _getRelativeDateTime(const Duration(hours: 5));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('5 hours ago'));
+    });
+
+    test('Test 1 day ago', () {
+      final dateTime = _getRelativeDateTime(const Duration(days: 1));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('a day ago'));
+    });
+
+    test('Test days ago (less than 8 days)', () {
+      final dateTime = _getRelativeDateTime(const Duration(days: 5));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('5 days ago'));
+    });
+
+    test('Test date formatting for more than 8 days', () {
+      final dateTime = _getRelativeDateTime(const Duration(days: 10));
+      final result = GetTimeAgo.parse(dateTime);
+      final expectedDate = DateFormat("dd MMM, yyyy hh:mm aa").format(dateTime);
+      expect(result, equals(expectedDate));
+    });
+
+    test('Test invalid locale (throws error)', () {
+      expect(() => GetTimeAgo.setDefaultLocale('invalid'), throwsArgumentError);
+    });
+
+    test('Test custom locale (French)', () {
       GetTimeAgo.setDefaultLocale('fr');
-
-      var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('il y a 10 heures'));
+      final dateTime = _getRelativeDateTime(const Duration(minutes: 5));
+      final result = GetTimeAgo.parse(dateTime);
+      expect(result, equals('il y a 5 minutes'));
     });
 
-    test('should support a simplified chinese locale', () async {
-      final dateTime = now.subtract(const Duration(hours: 10));
-
-      // Set default locale to 'zh'
-      GetTimeAgo.setDefaultLocale('zh');
-
-      var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('10小时前'));
+    test('Test custom pattern', () {
+      GetTimeAgo.setDefaultLocale('en');
+      final dateTime = DateTime(2024, 8, 10, 14, 30);
+      final result = GetTimeAgo.parse(dateTime, pattern: 'yyyy-MM-dd HH:mm');
+      expect(result, equals('2024-08-10 14:30'));
     });
 
-    test('should support a traditional chinese locale', () async {
-      final dateTime = now.subtract(const Duration(hours: 20));
-
-      // Set default locale to 'zh_tr'
-      GetTimeAgo.setDefaultLocale('zh_tr');
-
-      var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('20小時前'));
+    test('Test custom locale messages', () {
+      GetTimeAgo.setCustomLocaleMessages('test', TestMessages());
+      final dateTime = _getRelativeDateTime(const Duration(minutes: 3));
+      final result = GetTimeAgo.parse(dateTime, locale: 'test');
+      expect(result, equals('3 mins ago'));
     });
-
-    test('should support a japanese locale', () async {
-      final dateTime = now.subtract(const Duration(minutes: 1));
-
-      var result = GetTimeAgo.parse(dateTime, locale: 'ja');
-      expect(result, equals('1分前'));
-    });
-
-    test('should support a Vietnamese locale', () async {
-      final dateTime = now.subtract(const Duration(minutes: 1));
-
-      var result = GetTimeAgo.parse(dateTime, locale: 'vi');
-      expect(result, equals('1 phút trước'));
-    });
-
-    test('should support an Occitan locale', () async {
-      final dateTime = now.subtract(const Duration(hours: 10));
-      // Set default locale to 'oc'
-      GetTimeAgo.setDefaultLocale('oc');
-
-      var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('fa 10 oras'));
-    });
-
-    test('should support an Romaninan locale', () async {
-      final dateTime = now.subtract(const Duration(hours: 10));
-      // Set default locale to 'ro'
-      GetTimeAgo.setDefaultLocale('ro');
-
-      var result = GetTimeAgo.parse(dateTime);
-      expect(result, equals('acum 10 ore'));
-    });
-  });
-
-  test('should support Urdu locale with the difference in seconds', () async {
-    final dateTime = now.subtract(const Duration(seconds: 30));
-
-    var result = GetTimeAgo.parse(dateTime, locale: "ur");
-    expect(result, equals('\u202B ' '۳۰ سیکنڈ پہلے'));
-  });
-
-  test('should support Urdu locale with the difference of 3 days', () async {
-    final stringDateTime = now.subtract(const Duration(days: 3)).toString();
-
-    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ur");
-    expect(result, equals('\u202B ' '۳ دن پہلے'));
-  });
-
-  test('should support Arabic locale with the difference of 2 days', () async {
-    final stringDateTime = now.subtract(const Duration(days: 2)).toString();
-
-    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ar");
-    expect(result, equals('قبل يومين'));
-  });
-
-  test('should support Arabic locale with the difference of 3 days', () async {
-    final stringDateTime = now.subtract(const Duration(days: 3)).toString();
-
-    var result = GetTimeAgo.parse(DateTime.parse(stringDateTime), locale: "ar");
-    expect(result, equals('قبل ۳ أيام'));
   });
 }

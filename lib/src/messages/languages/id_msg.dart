@@ -9,6 +9,9 @@ class IndonesianMessages implements Messages {
   String suffixAgo() => 'lalu';
 
   @override
+  String justNow(int seconds) => 'baru saja';
+
+  @override
   String secsAgo(int seconds) => '$seconds detik';
 
   @override

@@ -9,6 +9,9 @@ class EspanaMessages implements Messages {
   String suffixAgo() => '';
 
   @override
+  String justNow(int seconds) => 'hace poco';
+
+  @override
   String secsAgo(int seconds) => '$seconds segundos';
 
   @override

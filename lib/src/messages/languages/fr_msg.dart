@@ -9,6 +9,9 @@ class FrenchMessages implements Messages {
   String suffixAgo() => '';
 
   @override
+  String justNow(int seconds) => 'en ce moment';
+
+  @override
   String secsAgo(int seconds) => '$seconds secondes';
 
   @override

@@ -9,12 +9,10 @@ class RomanianMessages implements Messages {
   String suffixAgo() => '';
 
   @override
-  String secsAgo(int seconds) {
-    if (seconds == 1) {
-      return 'o secundă';
-    }
-    return '$seconds secunde';
-  }
+  String justNow(int seconds) => 'tocmai acum';
+
+  @override
+  String secsAgo(int seconds) => '$seconds secunde';
 
   @override
   String minAgo(int minutes) => 'un minut';

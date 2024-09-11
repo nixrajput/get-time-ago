@@ -9,6 +9,9 @@ class PortugueseBrazilMessages implements Messages {
   String suffixAgo() => '';
 
   @override
+  String justNow(int seconds) => 'agora mesmo';
+
+  @override
   String secsAgo(int seconds) => '$seconds segundos';
 
   @override

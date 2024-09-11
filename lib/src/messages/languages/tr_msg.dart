@@ -9,6 +9,9 @@ class TurkishMessages implements Messages {
   String suffixAgo() => 'önce';
 
   @override
+  String justNow(int seconds) => 'hemen şimdi';
+
+  @override
   String secsAgo(int seconds) => '$seconds saniye';
 
   @override
