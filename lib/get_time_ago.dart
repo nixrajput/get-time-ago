@@ -1,3 +1,11 @@
+library get_time_ago;
+
+/// Export statements to expose internal files and classes
+/// from the [get_time_ago] package.
+///
+/// These exports allow other files or packages to access and
+/// use the classes, messages, data, and utility functions.
+
 export 'package:get_time_ago/src/_get_time_ago.dart';
 export 'package:get_time_ago/src/messages/languages/ar_msg.dart';
 export 'package:get_time_ago/src/messages/languages/de_msg.dart';
@@ -17,3 +25,5 @@ export 'package:get_time_ago/src/messages/languages/vi_msg.dart';
 export 'package:get_time_ago/src/messages/languages/zh_cn_msg.dart';
 export 'package:get_time_ago/src/messages/languages/zh_tw_msg.dart';
 export 'package:get_time_ago/src/messages/messages.dart';
+export 'package:get_time_ago/src/utils/data.dart';
+export 'package:get_time_ago/src/utils/utility.dart';

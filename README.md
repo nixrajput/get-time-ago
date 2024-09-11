@@ -2,35 +2,85 @@
 
 A Dart package that converts and formats `DateTime` objects into human-readable 'time ago' strings, such as '20 seconds ago', 'a minute ago', or '7 hours ago'. This package provides an easy way to display relative time differences in your Flutter or Dart applications. It supports various time units (seconds, minutes, hours, days, etc.) and automatically adjusts the format based on how recent the event occurred. Ideal for displaying timestamps in news feeds, social media posts, or chat messages.
 
-[![pub package](https://img.shields.io/pub/v/get_time_ago.svg?label=Version)][pub]
-[![Stars](https://img.shields.io/github/stars/nixrajput/get-time-ago?label=Stars)][repo]
-[![Forks](https://img.shields.io/github/forks/nixrajput/get-time-ago?label=Forks)][repo]
-[![Watchers](https://img.shields.io/github/watchers/nixrajput/get-time-ago?label=Watchers)][repo]
-[![Contributors](https://img.shields.io/github/contributors/nixrajput/get-time-ago?label=Contributors)][repo]
-[![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg)][pub]
+[![pub package](https://img.shields.io/pub/v/get_time_ago.svg?label=Version&style=flat)][pub]
+[![Stars](https://img.shields.io/github/stars/nixrajput/get-time-ago?label=Stars&style=flat)][repo]
+[![Forks](https://img.shields.io/github/forks/nixrajput/get-time-ago?label=Forks&style=flat)][repo]
+[![Watchers](https://img.shields.io/github/watchers/nixrajput/get-time-ago?label=Watchers&style=flat)][repo]
+[![Contributors](https://img.shields.io/github/contributors/nixrajput/get-time-ago?label=Contributors&style=flat)][repo]
+[![CI](https://github.com/nixrajput/get-time-ago/workflows/CI/badge.svg?style=flat)][pub]
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/nixrajput/get-time-ago?label=Latest)][releases]
-[![GitHub last commit](https://img.shields.io/github/last-commit/nixrajput/get-time-ago?label=Last+Commit)][repo]
-[![GitHub issues](https://img.shields.io/github/issues/nixrajput/get-time-ago?label=Issues)][issues]
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/nixrajput/get-time-ago?label=Pull+Requests)][pulls]
-[![GitHub Licence](https://img.shields.io/github/license/nixrajput/get-time-ago?label=Licence)][license]
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/nixrajput/get-time-ago?label=Latest&style=flat)][releases]
+[![GitHub last commit](https://img.shields.io/github/last-commit/nixrajput/get-time-ago?label=Last+Commit&style=flat)][repo]
+[![GitHub issues](https://img.shields.io/github/issues/nixrajput/get-time-ago?label=Issues&style=flat)][issues]
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/nixrajput/get-time-ago?label=Pull+Requests&style=flat)][pulls]
+[![GitHub License](https://img.shields.io/github/license/nixrajput/get-time-ago?label=Licence&style=flat)][license]
 
 ## Table of Contents
 
 - [get\_time\_ago](#get_time_ago)
-    - [Table of Contents](#table-of-contents)
-    - [Demo](#demo)
-    - [Installation](#installation)
-    - [Usage](#usage)
-        - [Formatting String as `get_time_ago`](#formatting-string-as-get_time_ago)
-        - [Setting default locale](#setting-default-locale)
-        - [Setting Custom Locale \& Messages](#setting-custom-locale--messages)
-    - [Contributors](#contributors)
-    - [Contributing](#contributing)
-    - [License](#license)
-    - [Sponsor Me](#sponsor-me)
-    - [Connect With Me](#connect-with-me)
-    - [Activities](#activities)
+  - [Table of Contents](#table-of-contents)
+  - [Breaking Changes for the Version ^2.0.0](#breaking-changes-for-the-version-200)
+    - [1. Added `justNow` Method in `Messages` Interface](#1-added-justnow-method-in-messages-interface)
+    - [Impact on Custom Implementations:](#impact-on-custom-implementations)
+    - [Example of Custom Locale Update:](#example-of-custom-locale-update)
+  - [Demo](#demo)
+    - [Click here to experience the demo in a Web App](#click-here-to-experience-the-demo-in-a-web-app)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Formatting String as `get_time_ago`](#formatting-string-as-get_time_ago)
+    - [Setting default locale](#setting-default-locale)
+    - [Setting Custom Locale \& Messages](#setting-custom-locale--messages)
+  - [Supported Languages](#supported-languages)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Sponsor Me](#sponsor-me)
+  - [Connect With Me](#connect-with-me)
+  - [Activities](#activities)
+
+## Breaking Changes for the Version ^2.0.0
+
+### 1. Added `justNow` Method in `Messages` Interface
+
+In version 2.0.0, a new method `justNow(int seconds)` has been added to the `Messages` interface. This method is responsible for providing a custom message when the elapsed time is less than 15 seconds.
+
+### Impact on Custom Implementations:
+
+If you have implemented any custom locales by extending the `Messages` interface, you will need to update your implementation to include the new `justNow` method. Failing to implement this method will result in compilation errors.
+
+### Example of Custom Locale Update:
+
+Before:
+
+```dart
+class MyCustomMessages implements Messages {
+  @override
+  String prefixAgo() => '';
+
+  @override
+  String suffixAgo() => 'ago';
+
+  // Implement the other methods here...
+}
+```
+
+After (Version 2.0.0):
+
+```dart
+class MyCustomMessages implements Messages {
+  @override
+  String prefixAgo() => '';
+
+  @override
+  String suffixAgo() => 'ago';
+
+  @override
+  String justNow(int seconds) => 'just now';  // New method
+
+  // Implement the other methods here...
+}
+```
+
+This section explains the breaking change, the impact it has on custom implementations, and provides an example of how to update existing code to comply with the new changes in version ^2.0.0.
 
 ## Demo
 
@@ -73,7 +123,7 @@ import 'package:get_time_ago/get_time_ago.dart';
 
 var _timestamp = '2021-05-10 05:21:37.712498'; // [DateTime] formatted as String.
 var _convertedTimestamp = DateTime.parse(_timestamp); // Converting into [DateTime] object
-var result = GetTimeAgo.parse(_convertedTimestamp); 
+var result = GetTimeAgo.parse(_convertedTimestamp);
 print(result);
 ```
 
@@ -99,33 +149,47 @@ Implementing and Adding Custom Messages
 
 ```dart
 class CustomMessages implements Messages {
+  /// Prefix added before the time message.
   @override
   String prefixAgo() => '';
 
+  /// Suffix added after the time message.
   @override
   String suffixAgo() => 'ago';
 
+  /// Message when the elapsed time is less than 15 seconds.
+  @override
+  String justNow(int seconds) => 'just now';
+
+  /// Message for when the elapsed time is less than a minute.
   @override
   String secsAgo(int seconds) => '$seconds seconds';
 
+  /// Message for when the elapsed time is about a minute.
   @override
   String minAgo(int minutes) => 'a minute';
 
+  /// Message for when the elapsed time is in minutes.
   @override
   String minsAgo(int minutes) => '$minutes minutes';
 
+  /// Message for when the elapsed time is about an hour.
   @override
   String hourAgo(int minutes) => 'an hour';
 
+  /// Message for when the elapsed time is in hours.
   @override
   String hoursAgo(int hours) => '$hours hours';
 
+  /// Message for when the elapsed time is about a day.
   @override
   String dayAgo(int hours) => 'a day';
 
+  /// Message for when the elapsed time is in days.
   @override
   String daysAgo(int days) => '$days days';
 
+  /// Word separator to be used when joining the parts of the message.
   @override
   String wordSeparator() => ' ';
 }
@@ -137,11 +201,32 @@ Overriding `en` Locale Messages with Custom Messages
 GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 ```
 
+## Supported Languages
+
+- Arabic
+- English
+- Spanish
+- Persian (Farsi)
+- French
+- Hindi
+- Portuguese (Brazil)
+- Portuguese (Brazil alternate)
+- Simplified Chinese
+- Traditional Chinese
+- Japanese
+- Occitan
+- Korean
+- German
+- Indonesian
+- Turkish
+- Urdu
+- Vietnamese
+- Romanian
+- Open to accept PR for adding more languages
+
 ## Contributing
 
-If you would like to contribute to this project, feel free to fork the repository, make your
-changes, and submit a pull request. Please follow the guidelines in
-the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+If you would like to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request. Please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## License
 
@@ -177,25 +262,14 @@ Thank you for considering sponsoring my work!
 ![Alt](https://repobeats.axiom.co/api/embed/cbde7baa03c95d2e3261af1fa679d94570341b08.svg "Repobeats analytics image")
 
 [pub]: https://pub.dev/packages/get_time_ago
-
 [github]: https://github.com/nixrajput
-
 [telegram]: https://telegram.me/nixrajput
-
 [twitter]: https://twitter.com/nixrajput07
-
 [instagram]: https://instagram.com/nixrajput
-
 [linkedin]: https://linkedin.com/in/nixrajput
-
 [gmail]: mailto:nkr.nikhil.nkr@gmail.com
-
 [releases]: https://github.com/nixrajput/get-time-ago/releases
-
 [repo]: https://github.com/nixrajput/get-time-ago
-
 [issues]: https://github.com/nixrajput/get-time-ago/issues
-
 [license]: https://github.com/nixrajput/get-time-ago/blob/master/LICENSE
-
 [pulls]: https://github.com/nixrajput/get-time-ago/pulls

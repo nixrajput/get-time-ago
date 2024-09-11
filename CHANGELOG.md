@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0
+
+- **Breaking Change**: A new message method `justNow` added for displaying the time less than 15 seconds.
+- **Documentation**: Updated the documentation to include breaking changes.
+- **Improvement**: Added comments to the classes, messages, data, and utility functions.
+- **Improvement**: New test cases are added and old test cases are removed or updated.
+
 ## 1.3.1
 
 - **Fix**: Lint errors and warnings fixed.
