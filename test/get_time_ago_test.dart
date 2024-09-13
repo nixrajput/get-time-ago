@@ -10,7 +10,7 @@ void main() {
     return DateTime.now().subtract(duration);
   }
 
-  group('GetTimeAgo parse function', () {
+  group('GetTimeAgo Test Cases', () {
     test('Test seconds ago (less than 15 seconds)', () {
       final dateTime = _getRelativeDateTime(const Duration(seconds: 10));
       final result = GetTimeAgo.parse(dateTime);

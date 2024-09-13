@@ -1,50 +1,130 @@
-import 'package:get_time_ago/src/messages/languages/ro_msg.dart';
+import 'package:get_time_ago/get_time_ago.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final messages = RomanianMessages();
+  final romanianMessages = RomanianMessages();
 
-  test('prefixAgo returns "acum"', () {
-    expect(messages.prefixAgo(), 'acum');
+  group('RomanianMessages Test', () {
+    test('prefixAgo should return "acum"', () {
+      expect(romanianMessages.prefixAgo(), 'acum');
+    });
+
+    test('suffixAgo should return an empty string', () {
+      expect(romanianMessages.suffixAgo(), '');
+    });
+
+    test('justNow should return "tocmai acum"', () {
+      expect(romanianMessages.justNow(20), 'tocmai acum');
+    });
+
+    test('secsAgo should return correct seconds ago format', () {
+      expect(romanianMessages.secsAgo(25), '25 secunde');
+    });
+
+    test('minAgo should return "un minut"', () {
+      expect(romanianMessages.minAgo(1), 'un minut');
+    });
+
+    test('minsAgo should return correct minutes ago format', () {
+      expect(romanianMessages.minsAgo(5), '5 minute');
+    });
+
+    test('hourAgo should return "o oră"', () {
+      expect(romanianMessages.hourAgo(60), 'o oră');
+    });
+
+    test('hoursAgo should return correct hours ago format', () {
+      expect(romanianMessages.hoursAgo(5), '5 ore');
+    });
+
+    test('dayAgo should return "o zi"', () {
+      expect(romanianMessages.dayAgo(24), 'o zi');
+    });
+
+    test('daysAgo should return correct days ago format', () {
+      expect(romanianMessages.daysAgo(5), '5 zile');
+    });
+
+    test('wordSeparator should return a space', () {
+      expect(romanianMessages.wordSeparator(), ' ');
+    });
   });
 
-  test('suffixAgo returns empty string', () {
-    expect(messages.suffixAgo(), '');
-  });
+  // Helper function to get the DateTime relative to now
+  DateTime _getRelativeDateTime(Duration duration) {
+    return DateTime.now().subtract(duration);
+  }
 
-  test('justNow returns correct strings', () {
-    expect(messages.justNow(7), 'tocmai acum');
-  });
+  group('GetTimeAgo Test with Romanian Locale', () {
+    test('should return "tocmai acum" for just now (0 seconds ago)', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(seconds: 0)),
+        locale: 'ro',
+      );
+      expect(result, 'tocmai acum');
+    });
 
-  test('secsAgo returns correct strings', () {
-    expect(messages.secsAgo(5), '5 secunde');
-  });
+    test('should return correct format for 25 seconds ago', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(seconds: 25)),
+        locale: 'ro',
+      );
+      expect(result, 'acum 25 secunde');
+    });
 
-  test('minAgo returns "un minut"', () {
-    expect(messages.minAgo(1), 'un minut');
-  });
+    test('should return "un minut" for 1 minute ago', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(minutes: 1)),
+        locale: 'ro',
+      );
+      expect(result, 'acum un minut');
+    });
 
-  test('minsAgo returns correct strings', () {
-    expect(messages.minsAgo(2), '2 minute');
-  });
+    test('should return correct format for 5 minutes ago', () {
+      final result = GetTimeAgo.parse(
+          _getRelativeDateTime(const Duration(minutes: 5)),
+          locale: 'ro');
+      expect(result, 'acum 5 minute');
+    });
 
-  test('hourAgo returns "o oră"', () {
-    expect(messages.hourAgo(1), 'o oră');
-  });
+    test('should return "o oră" for 1 hour ago', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(hours: 1)),
+        locale: 'ro',
+      );
+      expect(result, 'acum o oră');
+    });
 
-  test('hoursAgo returns correct strings', () {
-    expect(messages.hoursAgo(3), '3 ore');
-  });
+    test('should return correct format for 5 hours ago', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(hours: 5)),
+        locale: 'ro',
+      );
+      expect(result, 'acum 5 ore');
+    });
 
-  test('dayAgo returns "o zi"', () {
-    expect(messages.dayAgo(1), 'o zi');
-  });
+    test('should return "o zi" for 1 day ago', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(days: 1)),
+        locale: 'ro',
+      );
+      expect(result, 'acum o zi');
+    });
 
-  test('daysAgo returns correct strings', () {
-    expect(messages.daysAgo(4), '4 zile');
-  });
+    test('should return correct format for 5 days ago', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(days: 5)),
+        locale: 'ro',
+      );
+      expect(result, 'acum 5 zile');
+    });
 
-  test('wordSeparator returns space', () {
-    expect(messages.wordSeparator(), ' ');
+    test('should return formatted date for dates beyond 7 days', () {
+      final result = GetTimeAgo.parse(
+        _getRelativeDateTime(const Duration(days: 10)),
+        locale: 'ro',
+      );
+      expect(result, isNot('acum 10 zile'));
+    });
   });
 }

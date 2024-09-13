@@ -19,6 +19,7 @@ export 'package:get_time_ago/src/messages/languages/ja_msg.dart';
 export 'package:get_time_ago/src/messages/languages/ko_msg.dart';
 export 'package:get_time_ago/src/messages/languages/oc_msg.dart';
 export 'package:get_time_ago/src/messages/languages/pt_br_msg.dart';
+export 'package:get_time_ago/src/messages/languages/ro_msg.dart';
 export 'package:get_time_ago/src/messages/languages/tr_msg.dart';
 export 'package:get_time_ago/src/messages/languages/ur_msg.dart';
 export 'package:get_time_ago/src/messages/languages/vi_msg.dart';
