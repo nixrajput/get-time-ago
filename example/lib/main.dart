@@ -3,163 +3,142 @@ import 'package:get_time_ago/get_time_ago.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(GetTimeAgoExampleApp());
 }
 
-class MyApp extends StatelessWidget {
+class GetTimeAgoExampleApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => MaterialApp(
-        title: 'GetTimeAgo Example',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          brightness: Brightness.light,
-        ),
-        darkTheme: ThemeData(
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          brightness: Brightness.dark,
-        ),
-        home: HomePage(),
-      );
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GetTimeAgo Example',
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
+      ),
+      darkTheme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+      ),
+      home: GetTimeAgoExampleScreen(),
+    );
+  }
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  var _dateTime = DateTime.now().subtract(const Duration(minutes: 10));
-  final _sevenHoursAgo = DateTime.now().subtract(const Duration(hours: 7));
-  final _timestamp = '2021-05-10 22:21:37.712498';
-
-  Future<void> _selectDate() async {
-    var pickedDate = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now());
-    if (pickedDate != null) {
-      setState(() {
-        _dateTime = pickedDate;
-      });
-    }
+class GetTimeAgoExampleScreen extends StatelessWidget {
+  // Helper function to get the DateTime relative to now
+  DateTime _getRelativeDateTime(Duration duration) {
+    return DateTime.now().subtract(duration);
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('GetTimeAgo Example'),
-        ),
-        body: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('GetTimeAgo Example'),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            margin: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+              border: Border.all(color: Colors.blue.shade50),
+            ),
+            child: ListView(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
               children: [
-                CustomContainer(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text(
-                        'Converting DateTime into GetTimeAgo with Portuguese Locale',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 10.0),
-                      const Text(
-                          "DateTime.now().subtract(const Duration(hours: 7))"),
-                      const SizedBox(height: 5.0),
-                      Text(
-                        GetTimeAgo.parse(_sevenHoursAgo, locale: 'pt'),
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                _buildExampleTile(
+                  context,
+                  'Just Now (Less than 15 seconds ago)',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(seconds: 10)),
                   ),
                 ),
-                const SizedBox(height: 20.0),
-                CustomContainer(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text(
-                        'Converting String into GetTimeAgo with custom DateTime pattern',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 10.0),
-                      Text(_timestamp),
-                      const SizedBox(height: 5.0),
-                      Text(
-                        GetTimeAgo.parse(
-                          DateTime.parse(_timestamp),
-                          pattern: "dd-MM-yyyy hh:mm aa",
-                        ),
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                _buildExampleTile(
+                  context,
+                  '30 seconds ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(seconds: 30)),
                   ),
                 ),
-                const SizedBox(height: 20.0),
-                CustomContainer(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text(
-                        'Converting Input into GetTimeAgo',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 5.0),
-                      ElevatedButton.icon(
-                        onPressed: _selectDate,
-                        icon: const Icon(Icons.calendar_today),
-                        label: const Text('Select DateTime'),
-                      ),
-                      const SizedBox(height: 10.0),
-                      Text(_dateTime.toIso8601String()),
-                      const SizedBox(height: 5.0),
-                      Text(
-                        GetTimeAgo.parse(_dateTime),
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.secondary,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                _buildExampleTile(
+                  context,
+                  '1 minute ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(minutes: 1)),
                   ),
-                )
+                ),
+                _buildExampleTile(
+                  context,
+                  '2 minutes ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(minutes: 2)),
+                  ),
+                ),
+                _buildExampleTile(
+                  context,
+                  '1 hour ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(hours: 1)),
+                  ),
+                ),
+                _buildExampleTile(
+                  context,
+                  '2 hours ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(hours: 2)),
+                  ),
+                ),
+                _buildExampleTile(
+                  context,
+                  '1 day ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(days: 1)),
+                  ),
+                ),
+                _buildExampleTile(
+                  context,
+                  '3 days ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(days: 3)),
+                  ),
+                ),
+                _buildExampleTile(
+                  context,
+                  '10 days ago',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(const Duration(days: 10)),
+                  ),
+                ),
+                _buildExampleTile(
+                  context,
+                  'Custom format beyond 7 days',
+                  GetTimeAgo.parse(
+                    _getRelativeDateTime(
+                      const Duration(days: 10),
+                    ),
+                    pattern: 'yyyy-MM-dd',
+                  ),
+                ),
               ],
             ),
           ),
         ),
-      );
-}
+      ),
+    );
+  }
 
-class CustomContainer extends StatelessWidget {
-  final Widget child;
-
-  const CustomContainer({required this.child});
-
-  @override
-  Widget build(BuildContext context) => Container(
-        width: double.infinity,
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.15),
-            borderRadius: const BorderRadius.all(Radius.circular(16.0))),
-        child: child,
-      );
+  Widget _buildExampleTile(BuildContext context, String title, String timeAgo) {
+    return ListTile(
+      title: Text(title),
+      subtitle: Text(timeAgo),
+      isThreeLine: true,
+    );
+  }
 }
