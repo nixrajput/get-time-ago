@@ -55,7 +55,7 @@ void main() {
     return DateTime.now().subtract(duration);
   }
 
-  group('GetTimeAgo tests with JapaneseMessages', () {
+  group('GetTimeAgo Test with Japanese Locale', () {
     test('should return "唯今" for time less than 15 seconds', () {
       final result = GetTimeAgo.parse(
         _getRelativeDateTime(const Duration(seconds: 5)),

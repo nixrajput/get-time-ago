@@ -22,7 +22,7 @@ class TurkishMessages implements Messages {
 
   /// Message for when the elapsed time is about a minute.
   @override
-  String minAgo(int minutes) => '1 dakika önce';
+  String minAgo(int minutes) => '1 dakika';
 
   /// Message for when the elapsed time is in minutes.
   @override

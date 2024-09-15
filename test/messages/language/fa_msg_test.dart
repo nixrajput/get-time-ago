@@ -125,7 +125,7 @@ void main() {
         DateTime.now().subtract(const Duration(days: 10)),
         locale: 'fa',
       );
-      expect(result, isNot('\u202B ۳ روز پیش'));
+      expect(result, isNot('\u202B ۱۰ روز پیش'));
     });
   });
 }
