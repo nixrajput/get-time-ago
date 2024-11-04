@@ -34,7 +34,7 @@ void main() {
     });
 
     test('hoursAgo should return correct hours ago format', () {
-      expect(messages.hoursAgo(5), '5 hours');
+      expect(messages.hoursAgo(5), '5 uren');
     });
 
     test('dayAgo should return "een dag"', () {
