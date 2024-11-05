@@ -34,7 +34,7 @@ class DutchMessages implements Messages {
 
   /// Message for when the elapsed time is in hours.
   @override
-  String hoursAgo(int hours) => '$hours uren';
+  String hoursAgo(int hours) => '$hours uur';
 
   /// Message for when the elapsed time is about a day.
   @override
