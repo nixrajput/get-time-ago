@@ -8,6 +8,7 @@ import '../messages/languages/hi_msg.dart';
 import '../messages/languages/id_msg.dart';
 import '../messages/languages/ja_msg.dart';
 import '../messages/languages/ko_msg.dart';
+import '../messages/languages/nl_msg.dart';
 import '../messages/languages/oc_msg.dart';
 import '../messages/languages/pt_br_msg.dart';
 import '../messages/languages/ro_msg.dart';
@@ -51,5 +52,6 @@ class Data {
     'ur': UrduMessages(), // Urdu
     'vi': VietnameseMessages(), // Vietnamese
     'ro': RomanianMessages(), // Romanian
+    'nl': DutchMessages(), // Dutch
   };
 }

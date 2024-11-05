@@ -222,6 +222,7 @@ GetTimeAgo.setCustomLocaleMessages('en', CustomMessages());
 - Urdu
 - Vietnamese
 - Romanian
+- Dutch
 - Open to accept PR for adding more languages
 
 ## Contributing
