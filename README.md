@@ -33,7 +33,7 @@ A Dart package that converts and formats `DateTime` objects into human-readable 
   - [Supported Languages](#supported-languages)
   - [Contributing](#contributing)
   - [License](#license)
-  - [Sponsor Me](#sponsor-me)
+  - [Support My Work](#support-my-work)
   - [Connect With Me](#connect-with-me)
   - [Activities](#activities)
 

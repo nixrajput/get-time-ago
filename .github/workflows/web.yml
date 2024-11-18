@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history so we can compare
+          fetch-depth: 0
 
       - name: Fetch all branches
         run: git fetch origin
@@ -54,4 +54,4 @@ jobs:
         uses: bluefireteam/flutter-gh-pages@v8
         with:
           workingDir: example
-          baseHref: /get-time-ago/
+          baseHref: /get_time_ago/

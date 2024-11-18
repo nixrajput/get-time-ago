@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+- **Fix**: Demo web app issue fixed.
+
 ## 2.1.0
 
 - **Change**: Added support for `Dutch` (nl) locale.
