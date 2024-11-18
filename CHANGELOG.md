@@ -3,6 +3,8 @@
 ## 2.1.1
 
 - **Fix**: Demo web app issue fixed.
+- **Security**: Added `SECURITY.md` for vulnerability reporting and security best practices.
+- **Enhancement**: Added `Pull Request template` to ensure thorough checks for new contributions.
 
 ## 2.1.0
 

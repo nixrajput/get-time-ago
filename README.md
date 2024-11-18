@@ -84,7 +84,7 @@ This section explains the breaking change, the impact it has on custom implement
 
 ## Demo
 
-### [Click here to experience the demo in a Web App](https://nixrajput.github.io/get-time-ago)
+### [Click here to experience the demo in a Web App](https://nixrajput.github.io/get_time_ago)
 
 ## Installation
 
