@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0
+
+- **Change**: Added support for `Dutch` (nl) locale.
+- **Change**: Dependencies updated.
+- **Fix**: All known bugs and issues fixed.
+
 ## 2.0.0
 
 - **Breaking Change**: A new message method `justNow` added for displaying the time less than 15 seconds.
