@@ -233,15 +233,9 @@ If you would like to contribute to this project, feel free to fork the repositor
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Sponsor Me
+## Support My Work
 
-By sponsoring my efforts, you're not merely contributing to the development of my projects; you're investing in its growth and sustainability.
-
-Your support empowers me to dedicate more time and resources to improving the project's features, addressing issues, and ensuring its continued relevance in the rapidly evolving landscape of technology.
-
-Your sponsorship directly fuels innovation, fosters a vibrant community, and helps maintain the project's high standards of quality. Together, we can shape the future of the projects and make a lasting impact in the open-source community.
-
-Thank you for considering sponsoring my work!
+Your support helps me dedicate more time to developing high-quality, impactful projects in the open-source community. Sponsor me, and together, let’s bring even more innovation to life!
 
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/nixrajput)
 
